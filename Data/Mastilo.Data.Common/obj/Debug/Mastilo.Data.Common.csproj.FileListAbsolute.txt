@@ -3,3 +3,8 @@ C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Data\Mastilo.Data.Common\bin
 C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Data\Mastilo.Data.Common\obj\Debug\Mastilo.Data.Common.csprojResolveAssemblyReference.cache
 C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Data\Mastilo.Data.Common\obj\Debug\Mastilo.Data.Common.dll
 C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Data\Mastilo.Data.Common\obj\Debug\Mastilo.Data.Common.pdb
+C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Data\Mastilo.Data.Common\bin\Debug\Mastilo.Data.Common.dll.config
+C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Data\Mastilo.Data.Common\bin\Debug\EntityFramework.dll
+C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Data\Mastilo.Data.Common\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Data\Mastilo.Data.Common\bin\Debug\EntityFramework.xml
+C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Data\Mastilo.Data.Common\bin\Debug\EntityFramework.SqlServer.xml

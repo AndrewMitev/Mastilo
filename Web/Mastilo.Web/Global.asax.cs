@@ -1,8 +1,7 @@
-﻿using Mastilo.Web.App_Start;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using Mastilo.Data.Migrations;
+using Mastilo.Data;
+using Mastilo.Web.App_Start;
+using System.Data.Entity;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
@@ -13,6 +12,7 @@ namespace Mastilo.Web
     {
         protected void Application_Start()
         {
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<ApplicationDbContext, Configuration>());
             AutofacConfig.RegisterAutofac();
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);

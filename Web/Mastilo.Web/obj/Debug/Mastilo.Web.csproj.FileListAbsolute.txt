@@ -34,10 +34,7 @@ C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Web\Mastilo.Web\bin\Microsof
 C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Web\Mastilo.Web\bin\Microsoft.Owin.Security.Cookies.dll
 C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Web\Mastilo.Web\bin\Microsoft.Owin.Security.dll
 C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Web\Mastilo.Web\bin\Microsoft.Owin.Security.Facebook.dll
-C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Web\Mastilo.Web\bin\Microsoft.Owin.Security.Google.dll
-C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Web\Mastilo.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
 C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Web\Mastilo.Web\bin\Microsoft.Owin.Security.OAuth.dll
-C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Web\Mastilo.Web\bin\Microsoft.Owin.Security.Twitter.dll
 C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Web\Mastilo.Web\bin\Microsoft.Web.Infrastructure.dll
 C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Web\Mastilo.Web\bin\Newtonsoft.Json.dll
 C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Web\Mastilo.Web\bin\Owin.dll
@@ -74,9 +71,6 @@ C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Web\Mastilo.Web\bin\Microsof
 C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Web\Mastilo.Web\bin\Microsoft.Owin.Security.Facebook.xml
 C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Web\Mastilo.Web\bin\Microsoft.Owin.Security.Cookies.xml
 C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Web\Mastilo.Web\bin\Microsoft.Owin.Security.OAuth.xml
-C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Web\Mastilo.Web\bin\Microsoft.Owin.Security.Google.xml
-C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Web\Mastilo.Web\bin\Microsoft.Owin.Security.Twitter.xml
-C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Web\Mastilo.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Web\Mastilo.Web\obj\Debug\Mastilo.Web.csprojResolveAssemblyReference.cache
 C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Web\Mastilo.Web\obj\Debug\Mastilo.Web.dll
 C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Web\Mastilo.Web\obj\Debug\Mastilo.Web.pdb
