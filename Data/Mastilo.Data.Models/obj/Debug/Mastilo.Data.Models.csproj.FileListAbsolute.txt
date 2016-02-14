@@ -1,0 +1,14 @@
+C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Data\Mastilo.Data.Models\bin\Debug\Mastilo.Data.Models.dll.config
+C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Data\Mastilo.Data.Models\bin\Debug\Mastilo.Data.Models.dll
+C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Data\Mastilo.Data.Models\bin\Debug\Mastilo.Data.Models.pdb
+C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Data\Mastilo.Data.Models\bin\Debug\EntityFramework.dll
+C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Data\Mastilo.Data.Models\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Data\Mastilo.Data.Models\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Data\Mastilo.Data.Models\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Data\Mastilo.Data.Models\bin\Debug\EntityFramework.xml
+C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Data\Mastilo.Data.Models\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Data\Mastilo.Data.Models\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Data\Mastilo.Data.Models\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Data\Mastilo.Data.Models\obj\Debug\Mastilo.Data.Models.csprojResolveAssemblyReference.cache
+C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Data\Mastilo.Data.Models\obj\Debug\Mastilo.Data.Models.dll
+C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Data\Mastilo.Data.Models\obj\Debug\Mastilo.Data.Models.pdb

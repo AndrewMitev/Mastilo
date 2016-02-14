@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{6BE9D586-98D0-487D-9451-F26B378A84F6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{89614EBF-7216-4298-A90D-EBD06AAF7760}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{CC5DEF6C-1C04-4983-B1E9-6F57EA3764A7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{0653C648-3750-4F3B-B783-809D84CC1B73}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mastilo.Web", "Web\Mastilo.Web\Mastilo.Web.csproj", "{1220841C-599E-4199-821D-4AAF953DB457}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mastilo.Data", "Data\Mastilo.Data\Mastilo.Data.csproj", "{53F3B754-D8C6-47F7-AD66-C2F88C288570}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mastilo.Data.Models", "Data\Mastilo.Data.Models\Mastilo.Data.Models.csproj", "{DA5AAFCA-00A3-4AB5-BE22-968237CE66A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mastilo.Data.Common", "Data\Mastilo.Data.Common\Mastilo.Data.Common.csproj", "{EF646412-FFA4-4554-A925-40E69E2310E3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1220841C-599E-4199-821D-4AAF953DB457}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1220841C-599E-4199-821D-4AAF953DB457}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1220841C-599E-4199-821D-4AAF953DB457}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1220841C-599E-4199-821D-4AAF953DB457}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53F3B754-D8C6-47F7-AD66-C2F88C288570}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53F3B754-D8C6-47F7-AD66-C2F88C288570}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53F3B754-D8C6-47F7-AD66-C2F88C288570}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53F3B754-D8C6-47F7-AD66-C2F88C288570}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA5AAFCA-00A3-4AB5-BE22-968237CE66A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA5AAFCA-00A3-4AB5-BE22-968237CE66A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA5AAFCA-00A3-4AB5-BE22-968237CE66A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA5AAFCA-00A3-4AB5-BE22-968237CE66A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF646412-FFA4-4554-A925-40E69E2310E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF646412-FFA4-4554-A925-40E69E2310E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF646412-FFA4-4554-A925-40E69E2310E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF646412-FFA4-4554-A925-40E69E2310E3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1220841C-599E-4199-821D-4AAF953DB457} = {0653C648-3750-4F3B-B783-809D84CC1B73}
+		{53F3B754-D8C6-47F7-AD66-C2F88C288570} = {6BE9D586-98D0-487D-9451-F26B378A84F6}
+		{DA5AAFCA-00A3-4AB5-BE22-968237CE66A6} = {6BE9D586-98D0-487D-9451-F26B378A84F6}
+		{EF646412-FFA4-4554-A925-40E69E2310E3} = {6BE9D586-98D0-487D-9451-F26B378A84F6}
+	EndGlobalSection
+EndGlobal

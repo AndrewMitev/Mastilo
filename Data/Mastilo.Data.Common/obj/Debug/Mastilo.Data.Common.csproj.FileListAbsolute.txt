@@ -1,0 +1,5 @@
+C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Data\Mastilo.Data.Common\bin\Debug\Mastilo.Data.Common.dll
+C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Data\Mastilo.Data.Common\bin\Debug\Mastilo.Data.Common.pdb
+C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Data\Mastilo.Data.Common\obj\Debug\Mastilo.Data.Common.csprojResolveAssemblyReference.cache
+C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Data\Mastilo.Data.Common\obj\Debug\Mastilo.Data.Common.dll
+C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Data\Mastilo.Data.Common\obj\Debug\Mastilo.Data.Common.pdb
