@@ -74,3 +74,9 @@ C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Web\Mastilo.Web\bin\Microsof
 C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Web\Mastilo.Web\obj\Debug\Mastilo.Web.csprojResolveAssemblyReference.cache
 C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Web\Mastilo.Web\obj\Debug\Mastilo.Web.dll
 C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Web\Mastilo.Web\obj\Debug\Mastilo.Web.pdb
+C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Web\Mastilo.Web\bin\Mastilo.Data.Common.dll
+C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Web\Mastilo.Web\bin\Mastilo.Data.Common.pdb
+C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Web\Mastilo.Web\bin\AutoMapper.dll
+C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Web\Mastilo.Web\bin\Mastilo.Web.Infrastructure.dll
+C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Web\Mastilo.Web\bin\Mastilo.Web.Infrastructure.pdb
+C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Web\Mastilo.Web\bin\AutoMapper.xml

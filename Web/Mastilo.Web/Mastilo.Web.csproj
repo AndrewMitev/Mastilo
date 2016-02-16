@@ -52,6 +52,10 @@
       <HintPath>..\..\packages\Autofac.Mvc5.3.3.4\lib\net45\Autofac.Integration.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="AutoMapper, Version=4.2.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\AutoMapper.4.2.0\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Glimpse.Ado, Version=1.7.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Glimpse.Ado.1.7.3\lib\net45\Glimpse.Ado.dll</HintPath>
       <Private>True</Private>
@@ -194,23 +198,24 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Account\ExternalLoginConfirmationViewModel.cs" />
-    <Compile Include="Models\Account\ExternalLoginListViewModel.cs" />
-    <Compile Include="Models\Account\ForgotPasswordViewModel.cs" />
-    <Compile Include="Models\Account\ForgotViewModel.cs" />
-    <Compile Include="Models\Account\LoginViewModel.cs" />
-    <Compile Include="Models\Account\RegisterViewModel.cs" />
-    <Compile Include="Models\Account\ResetPasswordViewModel.cs" />
-    <Compile Include="Models\Account\SendCodeViewModel.cs" />
-    <Compile Include="Models\Account\VerifyCodeViewModel.cs" />
-    <Compile Include="Models\Manage\AddPhoneNumberViewModel.cs" />
-    <Compile Include="Models\Manage\ChangePasswordViewModel.cs" />
-    <Compile Include="Models\Manage\ConfigureTwoFactorViewModel.cs" />
-    <Compile Include="Models\Manage\FactorViewModel.cs" />
-    <Compile Include="Models\Manage\IndexViewModel.cs" />
-    <Compile Include="Models\Manage\ManageLoginsViewModel.cs" />
-    <Compile Include="Models\Manage\SetPasswordViewModel.cs" />
-    <Compile Include="Models\Manage\VerifyPhoneNumberViewModel.cs" />
+    <Compile Include="ViewModels\Account\ExternalLoginConfirmationViewModel.cs" />
+    <Compile Include="ViewModels\Account\ExternalLoginListViewModel.cs" />
+    <Compile Include="ViewModels\Account\ForgotPasswordViewModel.cs" />
+    <Compile Include="ViewModels\Account\ForgotViewModel.cs" />
+    <Compile Include="ViewModels\Account\LoginViewModel.cs" />
+    <Compile Include="ViewModels\Account\RegisterViewModel.cs" />
+    <Compile Include="ViewModels\Account\ResetPasswordViewModel.cs" />
+    <Compile Include="ViewModels\Account\SendCodeViewModel.cs" />
+    <Compile Include="ViewModels\Account\VerifyCodeViewModel.cs" />
+    <Compile Include="ViewModels\Jokes\JokeViewModel.cs" />
+    <Compile Include="ViewModels\Manage\AddPhoneNumberViewModel.cs" />
+    <Compile Include="ViewModels\Manage\ChangePasswordViewModel.cs" />
+    <Compile Include="ViewModels\Manage\ConfigureTwoFactorViewModel.cs" />
+    <Compile Include="ViewModels\Manage\FactorViewModel.cs" />
+    <Compile Include="ViewModels\Manage\IndexViewModel.cs" />
+    <Compile Include="ViewModels\Manage\ManageLoginsViewModel.cs" />
+    <Compile Include="ViewModels\Manage\SetPasswordViewModel.cs" />
+    <Compile Include="ViewModels\Manage\VerifyPhoneNumberViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -244,8 +249,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
@@ -280,6 +283,10 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Data\Mastilo.Data.Common\Mastilo.Data.Common.csproj">
+      <Project>{ef646412-ffa4-4554-a925-40e69e2310e3}</Project>
+      <Name>Mastilo.Data.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Data\Mastilo.Data.Models\Mastilo.Data.Models.csproj">
       <Project>{da5aafca-00a3-4ab5-be22-968237ce66a6}</Project>
       <Name>Mastilo.Data.Models</Name>
@@ -287,6 +294,10 @@
     <ProjectReference Include="..\..\Data\Mastilo.Data\Mastilo.Data.csproj">
       <Project>{53f3b754-d8c6-47f7-ad66-c2f88c288570}</Project>
       <Name>Mastilo.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mastilo.Web.Infrastructure\Mastilo.Web.Infrastructure.csproj">
+      <Project>{e877f525-9a33-4dd9-88e9-670b00ae75e5}</Project>
+      <Name>Mastilo.Web.Infrastructure</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

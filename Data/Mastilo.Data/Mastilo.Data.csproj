@@ -58,6 +58,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationDbContext.cs" />
+    <Compile Include="Migrations\201602150819183_InitialMigration.cs" />
+    <Compile Include="Migrations\201602150819183_InitialMigration.Designer.cs">
+      <DependentUpon>201602150819183_InitialMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602161230050_Test.cs" />
+    <Compile Include="Migrations\201602161230050_Test.Designer.cs">
+      <DependentUpon>201602161230050_Test.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -66,10 +74,22 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Mastilo.Data.Common\Mastilo.Data.Common.csproj">
+      <Project>{ef646412-ffa4-4554-a925-40e69e2310e3}</Project>
+      <Name>Mastilo.Data.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Mastilo.Data.Models\Mastilo.Data.Models.csproj">
       <Project>{da5aafca-00a3-4ab5-be22-968237ce66a6}</Project>
       <Name>Mastilo.Data.Models</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201602150819183_InitialMigration.resx">
+      <DependentUpon>201602150819183_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602161230050_Test.resx">
+      <DependentUpon>201602161230050_Test.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

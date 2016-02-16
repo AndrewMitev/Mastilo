@@ -14,3 +14,8 @@ C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Data\Mastilo.Data\bin\Debug\
 C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Data\Mastilo.Data\obj\Debug\Mastilo.Data.csprojResolveAssemblyReference.cache
 C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Data\Mastilo.Data\obj\Debug\Mastilo.Data.dll
 C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Data\Mastilo.Data\obj\Debug\Mastilo.Data.pdb
+C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Data\Mastilo.Data\bin\Debug\Mastilo.Data.Common.dll
+C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Data\Mastilo.Data\bin\Debug\Mastilo.Data.Common.pdb
+C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Data\Mastilo.Data\obj\Debug\Mastilo.Data.Migrations.InitialMigration.resources
+C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Data\Mastilo.Data\obj\Debug\Mastilo.Data.csproj.GenerateResource.Cache
+C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Data\Mastilo.Data\obj\Debug\Mastilo.Data.Migrations.Test.resources

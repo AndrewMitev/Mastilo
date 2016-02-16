@@ -12,3 +12,5 @@ C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Data\Mastilo.Data.Models\bin
 C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Data\Mastilo.Data.Models\obj\Debug\Mastilo.Data.Models.csprojResolveAssemblyReference.cache
 C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Data\Mastilo.Data.Models\obj\Debug\Mastilo.Data.Models.dll
 C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Data\Mastilo.Data.Models\obj\Debug\Mastilo.Data.Models.pdb
+C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Data\Mastilo.Data.Models\bin\Debug\Mastilo.Data.Common.dll
+C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Data\Mastilo.Data.Models\bin\Debug\Mastilo.Data.Common.pdb

@@ -1,6 +1,9 @@
 ﻿using Autofac;
 using Autofac.Integration.Mvc;
+using Mastilo.Data;
+using Mastilo.Data.Common;
 using System;
+using System.Data.Entity;
 using System.Diagnostics;
 using System.Reflection;
 using System.Web.Mvc;
@@ -39,7 +42,9 @@ namespace Mastilo.Web.App_Start
 
         private static void RegisterServices(ContainerBuilder builder)
         {
-            
+            builder.Register(x => new ApplicationDbContext()).As<DbContext>();
+
+            builder.RegisterGeneric(typeof(DbRepository<>)).As(typeof(IDbRepository<>)).InstancePerRequest();
         }
     }
 }
