@@ -1,6 +1,7 @@
 ﻿using Mastilo.Data;
 using Mastilo.Data.Common;
 using Mastilo.Data.Models;
+using Mastilo.Services.Data;
 using Mastilo.Web.Infrastructure.Mapping;
 using Mastilo.Web.ViewModels.Jokes;
 using System;
@@ -12,18 +13,19 @@ using System.Web.Mvc;
 
 namespace Mastilo.Web.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
-        private IDbRepository<Joke> jokes;
+        private IJokesService jokesService;
 
-        public HomeController(IDbRepository<Joke> jokes)
+        public HomeController(IJokesService jokesService)
         {
-            this.jokes = jokes;
+            this.jokesService = jokesService;
         }
 
         public ActionResult Index()
         {
-            return View(jokes.All().To<JokeViewModel>().ToList());
+            var jokes = this.Cache.Get("jokes", () => jokesService.All().To<JokeViewModel>().ToList(), 3 * 60);
+            return View(jokes);
         }
 
         public ActionResult About()

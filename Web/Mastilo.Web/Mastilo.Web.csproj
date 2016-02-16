@@ -192,6 +192,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="GlimpseSecurityPolicy.cs" />
@@ -294,6 +295,14 @@
     <ProjectReference Include="..\..\Data\Mastilo.Data\Mastilo.Data.csproj">
       <Project>{53f3b754-d8c6-47f7-ad66-c2f88c288570}</Project>
       <Name>Mastilo.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\Mastilo.Services.Data\Mastilo.Services.Data.csproj">
+      <Project>{5854b3ad-9af8-4ddb-9f5e-1708f7fbc491}</Project>
+      <Name>Mastilo.Services.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\Mastilo.Services.Web\Mastilo.Services.Web.csproj">
+      <Project>{112fa365-0e58-4ba9-bd7e-cb68d7ee2cf2}</Project>
+      <Name>Mastilo.Services.Web</Name>
     </ProjectReference>
     <ProjectReference Include="..\Mastilo.Web.Infrastructure\Mastilo.Web.Infrastructure.csproj">
       <Project>{e877f525-9a33-4dd9-88e9-670b00ae75e5}</Project>

@@ -21,6 +21,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mastilo.Data.Common", "Data
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mastilo.Web.Infrastructure", "Web\Mastilo.Web.Infrastructure\Mastilo.Web.Infrastructure.csproj", "{E877F525-9A33-4DD9-88E9-670B00AE75E5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mastilo.Services.Data", "Services\Mastilo.Services.Data\Mastilo.Services.Data.csproj", "{5854B3AD-9AF8-4DDB-9F5E-1708F7FBC491}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mastilo.Services.Web", "Services\Mastilo.Services.Web\Mastilo.Services.Web.csproj", "{112FA365-0E58-4BA9-BD7E-CB68D7EE2CF2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +51,14 @@ Global
 		{E877F525-9A33-4DD9-88E9-670B00AE75E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E877F525-9A33-4DD9-88E9-670B00AE75E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E877F525-9A33-4DD9-88E9-670B00AE75E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5854B3AD-9AF8-4DDB-9F5E-1708F7FBC491}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5854B3AD-9AF8-4DDB-9F5E-1708F7FBC491}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5854B3AD-9AF8-4DDB-9F5E-1708F7FBC491}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5854B3AD-9AF8-4DDB-9F5E-1708F7FBC491}.Release|Any CPU.Build.0 = Release|Any CPU
+		{112FA365-0E58-4BA9-BD7E-CB68D7EE2CF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{112FA365-0E58-4BA9-BD7E-CB68D7EE2CF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{112FA365-0E58-4BA9-BD7E-CB68D7EE2CF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{112FA365-0E58-4BA9-BD7E-CB68D7EE2CF2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -57,5 +69,7 @@ Global
 		{DA5AAFCA-00A3-4AB5-BE22-968237CE66A6} = {6BE9D586-98D0-487D-9451-F26B378A84F6}
 		{EF646412-FFA4-4554-A925-40E69E2310E3} = {6BE9D586-98D0-487D-9451-F26B378A84F6}
 		{E877F525-9A33-4DD9-88E9-670B00AE75E5} = {0653C648-3750-4F3B-B783-809D84CC1B73}
+		{5854B3AD-9AF8-4DDB-9F5E-1708F7FBC491} = {89614EBF-7216-4298-A90D-EBD06AAF7760}
+		{112FA365-0E58-4BA9-BD7E-CB68D7EE2CF2} = {89614EBF-7216-4298-A90D-EBD06AAF7760}
 	EndGlobalSection
 EndGlobal

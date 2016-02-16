@@ -80,3 +80,7 @@ C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Web\Mastilo.Web\bin\AutoMapp
 C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Web\Mastilo.Web\bin\Mastilo.Web.Infrastructure.dll
 C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Web\Mastilo.Web\bin\Mastilo.Web.Infrastructure.pdb
 C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Web\Mastilo.Web\bin\AutoMapper.xml
+C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Web\Mastilo.Web\bin\Mastilo.Services.Data.dll
+C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Web\Mastilo.Web\bin\Mastilo.Services.Data.pdb
+C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Web\Mastilo.Web\bin\Mastilo.Services.Web.dll
+C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Web\Mastilo.Web\bin\Mastilo.Services.Web.pdb
