@@ -2,7 +2,7 @@
 using Autofac.Integration.Mvc;
 using Mastilo.Data;
 using Mastilo.Data.Common;
-using Mastilo.Services.Data;
+using Mastilo.Services.Data.Interaces;
 using Mastilo.Services.Web;
 using Mastilo.Web.Controllers;
 using System;

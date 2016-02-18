@@ -21,6 +21,8 @@
 
         public IDbSet<Joke> Jokes { get; set; }
 
+        public IDbSet<Image> Images { get; set; }
+
         public override int SaveChanges()
         {
             this.ApplyAuditInfoRules();

@@ -19,3 +19,4 @@ C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Data\Mastilo.Data\bin\Debug\
 C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Data\Mastilo.Data\obj\Debug\Mastilo.Data.Migrations.InitialMigration.resources
 C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Data\Mastilo.Data\obj\Debug\Mastilo.Data.csproj.GenerateResource.Cache
 C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Data\Mastilo.Data\obj\Debug\Mastilo.Data.Migrations.Test.resources
+C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Data\Mastilo.Data\obj\Debug\Mastilo.Data.Migrations.doit.resources
