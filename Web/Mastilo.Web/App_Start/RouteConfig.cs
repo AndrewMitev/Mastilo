@@ -14,6 +14,12 @@ namespace Mastilo.Web
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                name: "MasterpiecesDetails",
+                url: "PieceDetails/{id}",
+                defaults: new { controller = "PieceDetails", action = "Index", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }

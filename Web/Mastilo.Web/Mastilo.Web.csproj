@@ -198,6 +198,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MasterpieceController.cs" />
+    <Compile Include="Controllers\PieceDetailsController.cs" />
     <Compile Include="Controllers\QuoteController.cs" />
     <Compile Include="GlimpseSecurityPolicy.cs" />
     <Compile Include="Global.asax.cs">
@@ -291,6 +292,7 @@
     <Content Include="Views\Masterpiece\Create.cshtml" />
     <Content Include="Views\Categories\_GetCategoriesByGenreIdPartial.cshtml" />
     <Content Include="Views\Masterpiece\Index.cshtml" />
+    <Content Include="Views\PieceDetails\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
