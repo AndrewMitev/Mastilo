@@ -21,6 +21,11 @@
         [ForeignKey("UserId")]
         public virtual User User { get; set; }
 
+        public int? MasterpieceId { get; set; }
+
+        [ForeignKey("MasterpieceId")]
+        public virtual Masterpiece Masterpiece { get; set; }
+
         public virtual ICollection<Like> Likes { get; set; }
     }
 }

@@ -194,12 +194,12 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CategoriesController.cs" />
+    <Compile Include="Controllers\CommentsController.cs" />
     <Compile Include="Controllers\ExploreController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MasterpieceController.cs" />
     <Compile Include="Controllers\PieceDetailsController.cs" />
-    <Compile Include="Controllers\QuoteController.cs" />
     <Compile Include="GlimpseSecurityPolicy.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -293,6 +293,8 @@
     <Content Include="Views\Categories\_GetCategoriesByGenreIdPartial.cshtml" />
     <Content Include="Views\Masterpiece\Index.cshtml" />
     <Content Include="Views\PieceDetails\Index.cshtml" />
+    <Content Include="Views\Shared\_CommentsSectionPartial.cshtml" />
+    <Content Include="Views\Shared\_AddCommentPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
