@@ -1,4 +1,4 @@
-﻿namespace Mastilo.Web.Models.Account
+﻿namespace Mastilo.Web.ViewModels.Account
 {
     using System.Collections.Generic;
 

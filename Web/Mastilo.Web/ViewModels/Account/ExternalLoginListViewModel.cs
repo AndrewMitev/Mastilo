@@ -1,5 +1,4 @@
-﻿using System;
-namespace Mastilo.Web.Models.Account
+﻿namespace Mastilo.Web.ViewModels.Account
 {
     public class ExternalLoginListViewModel
     {

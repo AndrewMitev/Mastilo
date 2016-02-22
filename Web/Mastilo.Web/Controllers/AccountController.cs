@@ -9,7 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Mastilo.Data.Models;
-using Mastilo.Web.Models.Account;
+using Mastilo.Web.ViewModels.Account;
 
 namespace Mastilo.Web.Controllers
 {

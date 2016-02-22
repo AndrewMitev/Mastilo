@@ -2,7 +2,7 @@
 using Autofac.Integration.Mvc;
 using Mastilo.Data;
 using Mastilo.Data.Common;
-using Mastilo.Services.Data.Interaces;
+using Mastilo.Services.Data.Interfaces;
 using Mastilo.Services.Web;
 using Mastilo.Web.Controllers;
 using System;
@@ -48,7 +48,7 @@ namespace Mastilo.Web.App_Start
             builder.Register(x => new ApplicationDbContext()).As<DbContext>();
             builder.Register(x => new HttpCacheService()).As<ICacheService>();
 
-            var servicesAssembly = Assembly.GetAssembly(typeof(IJokesService));
+            var servicesAssembly = Assembly.GetAssembly(typeof(IMasterpiecesService));
             builder.RegisterAssemblyTypes(servicesAssembly).AsImplementedInterfaces();
 
             builder.RegisterGeneric(typeof(DbRepository<>)).As(typeof(IDbRepository<>)).InstancePerRequest();

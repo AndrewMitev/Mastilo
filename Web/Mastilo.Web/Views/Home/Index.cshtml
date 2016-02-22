@@ -1,21 +1,11 @@
-﻿@model IEnumerable<Mastilo.Web.ViewModels.Jokes.JokeViewModel>
-
-@using (Html.BeginForm("UploadImage", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
-{
-    <div class="row">
-        <span class="span4">
-            <input type="file" name="uploadImages" multiple="multiple" class="input-files" />
-        </span>
-        <span class="span2">
-            <input type="submit" name="button" value="Upload" class="btn btn-upload" />
-        </span>
-    </div>
-}
-
-<ul>
-    @foreach (var joke in Model)
+﻿@*@using (Html.BeginForm("UploadImage", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
     {
-        <li>@joke.Text <h3>@joke.All</h3></li>
-    }
-</ul>
-
+        <div class="row">
+            <span class="span4">
+                <input type="file" name="uploadImages" multiple="multiple" class="input-files" />
+            </span>
+            <span class="span2">
+                <input type="submit" name="button" value="Upload" class="btn btn-upload" />
+            </span>
+        </div>
+    }*@

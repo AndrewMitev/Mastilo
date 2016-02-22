@@ -2,11 +2,20 @@
 {
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
+    using System.Collections.Generic;
     using System.Security.Claims;
     using System.Threading.Tasks;
 
     public class User : IdentityUser
     {
+        public User()
+        {
+            this.Masterpieces = new HashSet<Masterpiece>();
+            this.Posts = new HashSet<TimelinePost>();
+            this.Comments = new HashSet<Comment>();
+            this.Rates = new HashSet<Rate>();
+        }
+
         public string FirstName { get; set; }
 
         public string LastName { get; set; }
@@ -16,6 +25,14 @@
         public string HomeTown { get; set; }
 
         public string Description { get; set; }
+
+        public virtual ICollection<Masterpiece> Masterpieces { get; set; }
+
+        public virtual ICollection<TimelinePost> Posts { get; set; }
+
+        public virtual ICollection<Rate> Rates { get; set; }
+
+        public virtual ICollection<Comment> Comments { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<User> manager)
         {

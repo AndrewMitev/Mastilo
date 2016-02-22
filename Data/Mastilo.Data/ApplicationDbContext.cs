@@ -19,13 +19,22 @@
             return new ApplicationDbContext();
         }
 
-        public IDbSet<Joke> Jokes { get; set; }
-
         public IDbSet<Image> Images { get; set; }
+
+        public IDbSet<Category> Categories { get; set; }
+
+        public IDbSet<Genre> Genres { get; set; }
+
+        public IDbSet<SeenBy> SeenBy { get; set; }
+
+        public IDbSet<Comment> Comments { get; set; }
+
+        public IDbSet<Masterpiece> Masterpieces { get; set; }
 
         public override int SaveChanges()
         {
             this.ApplyAuditInfoRules();
+
             return base.SaveChanges();
         }
 

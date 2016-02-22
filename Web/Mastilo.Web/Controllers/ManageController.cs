@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using Mastilo.Web.Models.Manage;
+using Mastilo.Web.ViewModels.Manage;
 
 namespace Mastilo.Web.Controllers
 {

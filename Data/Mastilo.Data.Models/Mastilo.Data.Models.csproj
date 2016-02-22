@@ -57,14 +57,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Category.cs" />
     <Compile Include="Comment.cs" />
-    <Compile Include="Enums\Genre.cs" />
     <Compile Include="Image.cs" />
-    <Compile Include="Joke.cs" />
     <Compile Include="Like.cs" />
+    <Compile Include="Masterpiece.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Quote.cs" />
-    <Compile Include="Tag.cs" />
+    <Compile Include="TimelinePost.cs" />
+    <Compile Include="Rate.cs" />
+    <Compile Include="SeenBy.cs" />
+    <Compile Include="Genre.cs" />
     <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>

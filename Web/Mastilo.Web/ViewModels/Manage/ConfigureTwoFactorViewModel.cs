@@ -1,4 +1,4 @@
-﻿namespace Mastilo.Web.Models.Manage
+﻿namespace Mastilo.Web.ViewModels.Manage
 {
     using System.Collections.Generic;
 
