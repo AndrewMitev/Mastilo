@@ -191,6 +191,10 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
+    <Compile Include="Areas\Editor\Controllers\ApproveController.cs" />
+    <Compile Include="Areas\Editor\EditorAreaRegistration.cs" />
+    <Compile Include="Areas\Editor\ViewModels\MasterpiecesApproveModel.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CategoriesController.cs" />
@@ -236,12 +240,17 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Images\book.jpg" />
+    <Content Include="Content\Images\bookTest.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\Editor\Views\web.config" />
+    <Content Include="Areas\Editor\_ViewStart.cshtml" />
+    <Content Include="Areas\Editor\Views\Approve\Index.cshtml" />
+    <Content Include="Areas\Administration\Views\web.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -461,6 +470,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Administration\Controllers\" />
+    <Folder Include="Areas\Administration\Models\" />
+    <Folder Include="Areas\Administration\Views\Shared\" />
+    <Folder Include="Areas\Editor\Models\" />
+    <Folder Include="Areas\Editor\Views\Shared\" />
     <Folder Include="Views\Quote\" />
   </ItemGroup>
   <ItemGroup>

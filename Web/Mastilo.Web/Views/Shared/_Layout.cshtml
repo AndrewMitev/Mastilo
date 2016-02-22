@@ -25,7 +25,7 @@
                     {
                         <li>@Html.ActionLink("Стена", "Index", "Home")</li>
                         <li>@Html.ActionLink("Произведения", "Index", "Masterpiece")</li>
-                        <li>@Html.ActionLink("Качи Произведение", "Create", "Masterpiece")</li>
+                        <li>@Html.ActionLink("Създай", "Create", "Masterpiece")</li>
                     }
                     <li>@Html.ActionLink("Explore", "Index", "Explore")</li>
                 </ul>
@@ -34,7 +34,9 @@
         </div>
     </div>
     <div class="container body-content">
-        @RenderBody()
+        <div id="main-content">
+            @RenderBody()
+        </div>
         <hr />
         <footer>
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
