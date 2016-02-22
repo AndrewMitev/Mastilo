@@ -61,30 +61,34 @@ namespace Mastilo.Data.Migrations
 
         private void SeedGenresAndCategories(ApplicationDbContext context)
         {
-            var othersCategory = new Category { Name = "Други" };
+            var prose = new Genre { Name = "Проза" };
+            var poetry = new Genre { Name = "Поезия" };
+
+            context.Genres.Add(prose);
+            context.Genres.Add(poetry);
 
             List<Category> proseCategories = new List<Category>();
-            proseCategories.Add(new Category { Name = "Любовна" });
-            proseCategories.Add(new Category { Name = "Еротична" });
-            proseCategories.Add(new Category { Name = "Хумористична" });
-            proseCategories.Add(new Category { Name = "Пейзажна" });
-            proseCategories.Add(new Category { Name = "За деца" });
-            proseCategories.Add(new Category { Name = "Философска" });
-            proseCategories.Add(new Category { Name = "Гражданска" });
-            proseCategories.Add(new Category { Name = "Бели стихове" });
-            proseCategories.Add(new Category { Name = "Оди и поеми" });
-            proseCategories.Add(new Category { Name = "Източни форми" });
-            proseCategories.Add(new Category { Name = "Пародии" });
+            proseCategories.Add(new Category { Name = "Любовна", Genre = prose });
+            proseCategories.Add(new Category { Name = "Еротична", Genre = prose });
+            proseCategories.Add(new Category { Name = "Хумористична", Genre = prose });
+            proseCategories.Add(new Category { Name = "Пейзажна", Genre = prose });
+            proseCategories.Add(new Category { Name = "За деца", Genre = prose });
+            proseCategories.Add(new Category { Name = "Философска", Genre = prose });
+            proseCategories.Add(new Category { Name = "Гражданска", Genre = prose });
+            proseCategories.Add(new Category { Name = "Бели стихове", Genre = prose });
+            proseCategories.Add(new Category { Name = "Оди и поеми", Genre = prose });
+            proseCategories.Add(new Category { Name = "Източни форми", Genre = prose });
+            proseCategories.Add(new Category { Name = "Пародии", Genre = prose });
 
             List<Category> poetryCategories = new List<Category>();
-            poetryCategories.Add(new Category { Name = "Разкази" });
-            poetryCategories.Add(new Category { Name = "Повести и романи" });
-            poetryCategories.Add(new Category { Name = "Литературни очерци" });
-            poetryCategories.Add(new Category { Name = "Фантастика и фентъзи" });
-            poetryCategories.Add(new Category { Name = "Приказки и произведения за деца" });
-            poetryCategories.Add(new Category { Name = "Хумористична" });
-            poetryCategories.Add(new Category { Name = "Еротична" });
-            poetryCategories.Add(new Category { Name = "Писма" });
+            poetryCategories.Add(new Category { Name = "Разкази", Genre = poetry });
+            poetryCategories.Add(new Category { Name = "Повести и романи", Genre = poetry });
+            poetryCategories.Add(new Category { Name = "Литературни очерци", Genre = poetry });
+            poetryCategories.Add(new Category { Name = "Фантастика и фентъзи", Genre = poetry });
+            poetryCategories.Add(new Category { Name = "Приказки и произведения за деца", Genre = poetry });
+            poetryCategories.Add(new Category { Name = "Хумористична", Genre = poetry });
+            poetryCategories.Add(new Category { Name = "Еротична", Genre = poetry });
+            poetryCategories.Add(new Category { Name = "Писма", Genre = poetry });
 
             foreach (var category in proseCategories)
             {
@@ -95,13 +99,6 @@ namespace Mastilo.Data.Migrations
             {
                 context.Categories.Add(category);
             }
-
-            context.Categories.Add(othersCategory);
-            poetryCategories.Add(othersCategory);
-            proseCategories.Add(othersCategory);
-
-            context.Genres.Add(new Genre { Name = "Проза", Categories = proseCategories });
-            context.Genres.Add(new Genre { Name = "Поезия", Categories = poetryCategories });
 
             context.SaveChanges();
 
@@ -120,7 +117,6 @@ namespace Mastilo.Data.Migrations
                     SeenBy = new List<SeenBy> { new SeenBy { SeenByUsername = "Pesho" }, new SeenBy { SeenByUsername = "Gosho" } },
                     Author = user,
                     Genre = prose,
-                    Categories = prose.Categories.Take(3).ToList(),
                     Comments = new List<Comment> { new Comment { User = secondUser, Text = "Много смешно" }, new Comment { User = secondUser, Text = "хахахах" } },
                     Rates = new List<Rate> { new Rate { User = secondUser, Value = 5 } }
                 };
