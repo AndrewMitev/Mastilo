@@ -317,7 +317,6 @@
     <Content Include="Areas\Editor\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Editor\Views\Approve\Index.cshtml" />
     <Content Include="Areas\Administration\Views\web.config" />
-    <Content Include="Areas\Editor\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Editor\Views\Details\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\i18n\grid.locale-ar.js" />
@@ -589,6 +588,7 @@
     <Folder Include="Areas\Administration\Models\" />
     <Folder Include="Areas\Administration\Views\Shared\" />
     <Folder Include="Areas\Editor\Models\" />
+    <Folder Include="Areas\Editor\Views\Shared\" />
     <Folder Include="Views\Quote\" />
   </ItemGroup>
   <ItemGroup>

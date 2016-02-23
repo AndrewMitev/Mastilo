@@ -23,11 +23,12 @@
                 <ul class="nav navbar-nav">
                     @if (User.Identity.IsAuthenticated)
                     {
-                        <li>@Html.ActionLink("Стена", "Index", "Home")</li>
-                        <li>@Html.ActionLink("Произведения", "Index", "Masterpiece")</li>
-                        <li>@Html.ActionLink("Създай", "Create", "Masterpiece")</li>
+                        <li>@Html.ActionLink("Стена", "Index", "Home", new { Area = "" }, null)</li>
+                        <li>@Html.ActionLink("Произведения", "Index", "Masterpiece", new { Area = "" }, null)</li>
+                        <li>@Html.ActionLink("Създай", "Create", "Masterpiece", new { Area = "" }, null)</li>
                     }
-                    <li>@Html.ActionLink("Explore", "Index", "Explore")</li>
+                    <li>@Html.ActionLink("Explore", "Index", "Explore", new { Area = "" }, null)</li>
+                    <li>@Html.ActionLink("Edit", "Index", "Approve", new { Area = "Editor" }, null)</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
