@@ -51,10 +51,12 @@
   <ItemGroup>
     <Compile Include="DbRepository{T}.cs" />
     <Compile Include="IDbRepository{T}.cs" />
+    <Compile Include="IUserDbRepository{T}.cs" />
     <Compile Include="Models\BaseModel{TKey}.cs" />
     <Compile Include="Models\IAuditInfo.cs" />
     <Compile Include="Models\IDeletableEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserDbRepository{T}.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

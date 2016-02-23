@@ -8,6 +8,7 @@ namespace Mastilo.Data.Migrations
     using System;
     using System.Data.Entity.Validation;
     using System.Diagnostics;
+    using Microsoft.AspNet.Identity.EntityFramework;
     public sealed class Configuration : DbMigrationsConfiguration<ApplicationDbContext>
     {
         public Configuration()
@@ -18,6 +19,7 @@ namespace Mastilo.Data.Migrations
 
         protected override void Seed(ApplicationDbContext context)
         {
+
             var hasher = new PasswordHasher();
 
             var user = new User
@@ -42,6 +44,31 @@ namespace Mastilo.Data.Migrations
 
             if (!context.Users.Any())
             {
+                // Create admin role
+                var roleStore = new RoleStore<IdentityRole>(context);
+                var roleManager = new RoleManager<IdentityRole>(roleStore);
+                var role = new IdentityRole { Name = "Administration" };
+                roleManager.Create(role);
+
+                // Create editor role
+                var editorRole = new IdentityRole { Name = "Editor" };
+                roleManager.Create(editorRole);
+
+                // Create admin user
+                var userStore = new UserStore<User>(context);
+                var userManager = new UserManager<User>(userStore);
+                var admin = new User { UserName = "admin@admin.com", Email = "admin@admin.admin" };
+                userManager.Create(admin, "123456");
+
+                // Assign admin to admin role
+                userManager.AddToRole(admin.Id, "Administration");
+
+                // Assign editor
+                var editor = new User { UserName = "editor@editor.com", Email = "editor@editor.com" };
+                userManager.Create(editor, "123456");
+
+                userManager.AddToRole(editor.Id, "Editor");
+
                 context.Users.Add(user);
                 context.Users.Add(secondUser);
 

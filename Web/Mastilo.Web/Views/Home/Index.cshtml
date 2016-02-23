@@ -1,11 +1,6 @@
-﻿@*@using (Html.BeginForm("UploadImage", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
-    {
-        <div class="row">
-            <span class="span4">
-                <input type="file" name="uploadImages" multiple="multiple" class="input-files" />
-            </span>
-            <span class="span2">
-                <input type="submit" name="button" value="Upload" class="btn btn-upload" />
-            </span>
-        </div>
-    }*@
+﻿@model IEnumerable<Mastilo.Web.ViewModels.MasterpieceViewModels.MasterpieceResponseViewModel>
+
+@foreach (var masterpiece in Model)
+{
+    <h1>@masterpiece.Title</h1>
+}
