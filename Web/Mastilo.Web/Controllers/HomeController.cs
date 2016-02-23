@@ -1,11 +1,10 @@
 ﻿namespace Mastilo.Web.Controllers
 {
-    using Areas.Editor.ViewModels;
     using Infrastructure.Mapping;
     using Services.Data.Interfaces;
     using System.Linq;
     using System.Web.Mvc;
-
+    using ViewModels.MasterpieceViewModels;
     [Authorize]
     public class HomeController : BaseController
     {

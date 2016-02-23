@@ -54,6 +54,10 @@ namespace Mastilo.Web.App_Start
             builder.RegisterGeneric(typeof(DbRepository<>)).As(typeof(IDbRepository<>)).InstancePerRequest();
             builder.RegisterGeneric(typeof(UserDbRepository<>)).As(typeof(IUserDbRepository<>)).InstancePerRequest();
 
+            builder.Register(x => new HtmlSanitizerAdapter())
+            .As<ISanitizer>()
+            .InstancePerRequest();
+
             builder.RegisterAssemblyTypes(Assembly.GetExecutingAssembly())
             .AssignableTo<BaseController>().PropertiesAutowired();
         }

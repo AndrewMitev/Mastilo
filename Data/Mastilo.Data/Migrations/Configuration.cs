@@ -7,8 +7,8 @@ namespace Mastilo.Data.Migrations
     using System.Collections.Generic;
     using System;
     using System.Data.Entity.Validation;
-    using System.Diagnostics;
     using Microsoft.AspNet.Identity.EntityFramework;
+
     public sealed class Configuration : DbMigrationsConfiguration<ApplicationDbContext>
     {
         public Configuration()
@@ -19,6 +19,16 @@ namespace Mastilo.Data.Migrations
 
         protected override void Seed(ApplicationDbContext context)
         {
+            if (!context.Roles.Any())
+            {
+                var store = new RoleStore<IdentityRole>(context);
+                var manager = new RoleManager<IdentityRole>(store);
+                var adminRole = new IdentityRole { Name = "Administration" };
+                var editorRole = new IdentityRole { Name = "Editor" };
+
+                manager.Create(adminRole);
+                manager.Create(editorRole);
+            }
 
             var hasher = new PasswordHasher();
 
@@ -29,7 +39,8 @@ namespace Mastilo.Data.Migrations
                 Age = 17,
                 FirstName = "Rally",
                 LastName = "Br.",
-                PasswordHash = hasher.HashPassword("1234")
+                PasswordHash = hasher.HashPassword("1234"),
+                SecurityStamp = Guid.NewGuid().ToString()
             };
 
             var secondUser = new User
@@ -39,34 +50,34 @@ namespace Mastilo.Data.Migrations
                 Age = 90,
                 FirstName = "Petur",
                 LastName = "Mitov",
-                PasswordHash = hasher.HashPassword("1234")
+                PasswordHash = hasher.HashPassword("1234"),
+                SecurityStamp = Guid.NewGuid().ToString()
+            };
+
+            var admin = new User
+            {
+                UserName = "admin@admin.com",
+                Email = "admin@admin.com",
+                PasswordHash = hasher.HashPassword("123456"),
+                SecurityStamp = Guid.NewGuid().ToString()
+            };
+
+            var editor = new User
+            {
+                UserName = "editor@editor.com",
+                Email = "editor@editor.com",
+                PasswordHash = hasher.HashPassword("123456"),
+                SecurityStamp = Guid.NewGuid().ToString()
             };
 
             if (!context.Users.Any())
             {
-                // Create admin role
-                var roleStore = new RoleStore<IdentityRole>(context);
-                var roleManager = new RoleManager<IdentityRole>(roleStore);
-                var role = new IdentityRole { Name = "Administration" };
-                roleManager.Create(role);
+                var userManager = new UserManager<User>(new UserStore<User>(context));
 
-                // Create editor role
-                var editorRole = new IdentityRole { Name = "Editor" };
-                roleManager.Create(editorRole);
-
-                // Create admin user
-                var userStore = new UserStore<User>(context);
-                var userManager = new UserManager<User>(userStore);
-                var admin = new User { UserName = "admin@admin.com", Email = "admin@admin.admin" };
-                userManager.Create(admin, "123456");
-
-                // Assign admin to admin role
+                userManager.Create(admin);
                 userManager.AddToRole(admin.Id, "Administration");
 
-                // Assign editor
-                var editor = new User { UserName = "editor@editor.com", Email = "editor@editor.com" };
-                userManager.Create(editor, "123456");
-
+                userManager.Create(editor);
                 userManager.AddToRole(editor.Id, "Editor");
 
                 context.Users.Add(user);

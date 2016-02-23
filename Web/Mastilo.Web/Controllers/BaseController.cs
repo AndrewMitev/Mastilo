@@ -17,14 +17,14 @@
             }
         }
 
-        protected override void OnException(ExceptionContext filterContext)
-        {
-            filterContext.ExceptionHandled = true;
+        //protected override void OnException(ExceptionContext filterContext)
+        //{
+        //    filterContext.ExceptionHandled = true;
 
-            filterContext.Result = new ViewResult
-            {
-                ViewName = "~/Views/Shared/Error.cshtml"
-            };
-        }
+        //    filterContext.Result = new ViewResult
+        //    {
+        //        ViewName = "~/Views/Shared/Error.cshtml"
+        //    };
+        //}
     }
 }

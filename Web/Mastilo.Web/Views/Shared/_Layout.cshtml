@@ -26,13 +26,13 @@
                         <li>@Html.ActionLink("Стена", "Index", "Home", new { Area = "" }, null)</li>
                         <li>@Html.ActionLink("Произведения", "Index", "Masterpiece", new { Area = "" }, null)</li>
                         <li>@Html.ActionLink("Създай", "Create", "Masterpiece", new { Area = "" }, null)</li>
-                        @if (User.IsInRole("Editor"))
+                        if (User.IsInRole("Editor"))
                         {
-                            <li>@Html.ActionLink("Edit", "Index", "Approve", new { Area = "Editor" }, null)</li>
+                            <li>@Html.ActionLink("Редакция", "Index", "Approve", new { Area = "Editor" }, null)</li>
                         }
-                        @if (User.IsInRole("Administrator"))
+                        if (User.IsInRole("Administration"))
                         {
-                            <li>@Html.ActionLink("Manage Editors", "Index", "Admin", new { Area = "Administrator" }, null)</li>
+                            <li>@Html.ActionLink("Задай Роля", "Index", "Admin", new { Area = "Administration" }, null)</li>
                         }
                     }
                     <li>@Html.ActionLink("Explore", "Index", "Explore", new { Area = "" }, null)</li>

@@ -2,5 +2,6 @@
 
 @foreach (var masterpiece in Model)
 {
-    <h1>@masterpiece.Title</h1>
+    <h1>@Html.Raw(masterpiece.Title)</h1>
+    <h2>@Html.Raw(masterpiece.DisapprovedMessage)</h2>
 }
