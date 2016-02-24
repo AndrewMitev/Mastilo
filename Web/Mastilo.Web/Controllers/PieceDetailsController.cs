@@ -20,7 +20,6 @@ namespace Mastilo.Web.Controllers
         {
             var detailedMasterpiece = this.masterpiecesService.GetMasterpieceById(id);
             var piece = this.Mapper.Map<MasterpieceResponseViewModel>(detailedMasterpiece);
-            piece.CreatedOn = DateTime.Parse(piece.CreatedOn.ToString(), new CultureInfo("bg"));
 
             return View(piece);
         }

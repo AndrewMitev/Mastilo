@@ -1,17 +1,25 @@
 ﻿@model Mastilo.Web.ViewModels.CommentViewModels.CommentViewModel
 
-<h1>Add Comments:</h1>
-@using (Ajax.BeginForm("PostComment", "Comments", null,
-                            new AjaxOptions
-                            {
-                                UpdateTargetId = "commentsSection",
-                                InsertionMode = InsertionMode.Replace
-                            }))
+@if (User.Identity.IsAuthenticated)
 {
-    @Html.LabelFor(c => c.Text)
-    @Html.TextBoxFor(c => c.Text)
-    @Html.HiddenFor(c => c.MasterpieceId, new { id = "masterpieceIdForAjax" })
-    <input type="submit" value="Comment!" />
+    <h1>Add Comments:</h1>
+    using (Ajax.BeginForm("PostComment", "Comments", new { @class = "form-horizontal", role = "form" },
+                                        new AjaxOptions
+                                        {
+                                            UpdateTargetId = "commentsSection",
+                                            InsertionMode = InsertionMode.Replace
+                                        }))
+    {
+        @Html.TextAreaFor(c => c.Text)
+        @Html.HiddenFor(c => c.MasterpieceId, new { id = "masterpieceIdForAjax" })
+        <input class="btn btn-primary" type="submit" value="Comment!" />
+    }
+}
+else
+{
+    <div class="well">
+        <p>Регистрирай се за да коментираш!</p>
+    </div>
 }
 
 <div id="commentsSection"></div>

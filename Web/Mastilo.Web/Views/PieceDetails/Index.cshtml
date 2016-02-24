@@ -1,18 +1,20 @@
 ﻿@model Mastilo.Web.ViewModels.MasterpieceViewModels.MasterpieceResponseViewModel
 
 <div class="well">
-    <img width="40" height="60" src="~/Content/Images/pero.jpg"> <span>@Model.AuthorUserName</span>
+    <img width="40" height="60" src="~/Content/Images/pero.jpg" /> <span>@Model.AuthorUserName</span>
     @Html.DisplayFor(x => x.CreatedOn)
 </div>
 
 <div>
     <h2>@Model.Title</h2>
-    <div class="glyphicon glyphicon-comment"></div>
+    <div class="glyphicon glyphicon-eye-open"></div>
+    <div class="glyphicon glyphicon-comment"></div><small>@Model.Comments.Count</small>
+    <p>@Html.Raw(Model.SanitizedContent)</p>
 </div>
 
 <input id="masterpieceId" type="hidden" value="@Model.Id"/>
 
-@Html.Partial("_AddCommentPartial", new Mastilo.Web.ViewModels.CommentViewModels.CommentViewModel());
+@Html.Partial("_AddCommentPartial", new Mastilo.Web.ViewModels.CommentViewModels.CommentViewModel())
 
 @section scripts {
     <script>
@@ -35,6 +37,5 @@
                  });
              }
         });
-
     </script>
 }

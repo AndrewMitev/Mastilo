@@ -9,14 +9,26 @@
     }
 }
 
+@if (Model.Masterpieces.Count() == 0)
+{
+    <div class="jumbotron"><p>Все още нямате произведения!</p></div>
+    return;
+}
+
+
 @foreach (var masterpiece in Model.Masterpieces)
 {
+    if (masterpiece.Content.Length > 20)
+    {
+        masterpiece.Content = masterpiece.Content.Substring(0, 60) + "...";
+    }
+
     <div class="col-md-6">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <div class="row">
                     <div class="col-md-2">
-                        <img />
+                        <img width="40" height="60" src="~/Content/Images/pero.jpg"/>
                     </div>
                     <div class="col-md-4">
                         <a href="/PieceDetails/@masterpiece.Id">
@@ -26,7 +38,7 @@
                 </div>
                 <div class="panel-body">
                     <div class="row">
-                        <p>@masterpiece.Content</p>
+                        <p>@Html.Raw(masterpiece.Content)</p>
                     </div>
                 </div>
             </div>

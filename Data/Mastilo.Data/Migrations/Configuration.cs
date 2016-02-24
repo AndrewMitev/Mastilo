@@ -1,13 +1,13 @@
 namespace Mastilo.Data.Migrations
 {
-    using System.Data.Entity.Migrations;
-    using Models;
-    using Microsoft.AspNet.Identity;
-    using System.Linq;
-    using System.Collections.Generic;
     using System;
+    using System.Collections.Generic;
+    using System.Data.Entity.Migrations;
     using System.Data.Entity.Validation;
+    using System.Linq;
+    using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
+    using Models;
 
     public sealed class Configuration : DbMigrationsConfiguration<ApplicationDbContext>
     {

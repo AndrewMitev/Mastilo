@@ -3,7 +3,6 @@
     using Common.Models;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    using System;
 
     public class Genre : BaseModel<int>
     {

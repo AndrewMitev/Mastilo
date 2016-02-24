@@ -1,13 +1,14 @@
 ﻿namespace Mastilo.Data
 {
-    using Microsoft.AspNet.Identity.EntityFramework;
-    using Models;
     using System;
     using System.Data.Entity;
-    using System.Linq;
-    using Common.Models;
     using System.Data.Entity.ModelConfiguration.Conventions;
     using System.Data.Entity.Validation;
+    using System.Linq;
+    using Common.Models;
+    using Microsoft.AspNet.Identity.EntityFramework;
+    using Models;
+
     public class ApplicationDbContext : IdentityDbContext<User>
     {
         public ApplicationDbContext()
