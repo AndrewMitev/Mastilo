@@ -1,0 +1,48 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>Masterpiece edit:</h3>
+
+<table id="list" class="scroll" cellpadding="0" cellspacing="0"></table>
+
+<div id="pager" class="scroll" style="text-align:center;"></div>
+
+@section Styles{
+    <link href="~/Content/jquery.jqGrid/ui.jqgrid.css" rel="stylesheet" />
+    <link href="~/Content/themes/base/jquery-ui.css" rel="stylesheet" />
+}
+
+@section Scripts{
+    <script src="~/Scripts/jquery.jqGrid.min.js"></script>
+    <script src="~/Scripts/i18n/grid.locale-en.js"></script>
+    <script>
+        $(document).ready(function myfunction() {
+            $.jgrid.defaults.width = 800;
+            $.jgrid.defaults.responsive = true;
+            $.jgrid.defaults.styleUI = 'Bootstrap';
+
+            $('#list').jqGrid({
+                caption: "MasterpiecesDetails",
+                url: '/Editor/Approve/LoadGrid',
+                datatype: "json",
+                contentType: "application/json; charset-utf-8",
+                mtype: 'GET',
+                colNames: ['Title', 'Genre'],
+                colModel: [
+                      { name: 'Title', index: 'Title',  width: 20, formatter: 'showlink', formatoptions: { baseLinkUrl:'/Editor/Details/Index/', id: 'myName', defaultValue: 'No Value Set' } },
+                      { name: 'Genre', index: 'Genre', width: 20, formatoptions: { defaultValue: 'No Value Set' } }
+                ],
+                rowNum: 10,
+                rownumbers: true,
+                rownumWidth: 20,
+                pager: jQuery('#pager'),
+                loadonce: true,
+            });
+
+            jQuery("#list").jqGrid('navGrid', '#pager', { edit: true, add: true, del: true });
+        });
+
+
+    </script>
+}

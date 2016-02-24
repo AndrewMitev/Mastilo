@@ -1,0 +1,40 @@
+﻿@model Mastilo.Web.ViewModels.MasterpieceViewModels.MasterpieceResponseViewModel
+
+<div class="well">
+    <img width="40" height="60" src="~/Content/Images/pero.jpg"> <span>@Model.AuthorUserName</span>
+    @Html.DisplayFor(x => x.CreatedOn)
+</div>
+
+<div>
+    <h2>@Model.Title</h2>
+    <div class="glyphicon glyphicon-comment"></div>
+</div>
+
+<input id="masterpieceId" type="hidden" value="@Model.Id"/>
+
+@Html.Partial("_AddCommentPartial", new Mastilo.Web.ViewModels.CommentViewModels.CommentViewModel());
+
+@section scripts {
+    <script>
+        $(function () {
+            var masterpieceId = $("#masterpieceId").val();
+            $("#masterpieceIdForAjax").val(masterpieceId);
+
+             $.get("/Comments/AllById/" + masterpieceId, null, function (comments) {
+                 $("#commentsSection").html(comments);
+             });
+
+             $("body").on("click", "button[data-action='up']",  function () {
+                 var id = $(this).attr("data-id");
+                 updateVote(id);
+             });
+
+             function updateVote(id, vote) {
+                 $.post("/Comments/VoteComment", { commentId: id }, function (votesCountUpdated) {
+                     $("[data-id-count='" + id + "']").html(votesCountUpdated);
+                 });
+             }
+        });
+
+    </script>
+}

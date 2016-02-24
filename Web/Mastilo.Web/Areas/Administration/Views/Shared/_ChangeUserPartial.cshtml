@@ -1,0 +1,51 @@
+﻿@model Mastilo.Web.Areas.Administration.Models.UserViewModel
+
+<h1>Iddddd @Model.Id</h1>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">User's info</h3>
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-6"><strong>First Name: </strong></div>
+            <div class="col-md-6 clickable">@Model.FirstName</div>
+        </div>
+        <div class="row">
+            <div class="col-md-6"><strong>Last Name: </strong></div>
+            <div class="col-md-6">@Model.LastName</div>
+        </div>
+        <div class="row">
+            <div class="col-md-6"><strong>User Name: </strong></div>
+            <div class="col-md-6">@Model.UserName</div>
+        </div>
+        <div class="row">
+            <div class="col-md-6"><strong>Age: </strong></div>
+            <div class="col-md-6">@Model.Age</div>
+        </div>
+        <div class="row">
+            <div class="col-md-6"><strong>Set New Role: </strong></div>
+            <div class="col-md-6">
+                <select id="newRoleSelector">
+                    @if (Model.Role == "User")
+                    {
+                        <option value="User" selected="selected">User</option>
+                        <option value="Editor">Editor</option>
+                    }
+                    else
+                    {
+                        <option value="User">User</option>
+                        <option value="Editor" selected="selected">Editor</option>
+                    }
+                </select>
+            </div>
+        </div>
+    </div>
+</div>
+
+@using (Html.BeginForm("ChangeRole", "Admin", new { @class = "form-horizontal" }))
+{
+
+    <input type="hidden" value="@Model.Id" name="userId" />
+    <input id="userNewRole" value = "@Model.Role" type="hidden" name="role" />
+    <input type="submit" value="Промени" class="form-control btn-primary" />
+}

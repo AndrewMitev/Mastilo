@@ -1,0 +1,53 @@
+﻿@model Mastilo.Web.ViewModels.MasterpieceViewModels.MasterpieceRequestDataModel
+
+@using (Html.BeginForm("CreateMasterpiece", "Masterpiece", FormMethod.Post, new { @class = "form-horizontal", role="form" }))
+{
+    @Html.AntiForgeryToken()
+
+    <h3 class="text-center">Сподели ново произведение!</h3>
+    <div class="form-group">
+        @Html.LabelFor(b => b.Masterpiece.Title, new { @class="control-label"})
+        @Html.TextBoxFor(b => b.Masterpiece.Title, new { @class = "form-control", placeholder = "Въведи" })
+        @Html.ValidationMessageFor(b => b.Masterpiece.Title)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(b => b.Masterpiece.Content, new { @class = "control-label" })
+        @Html.EditorFor(b => b.Masterpiece.Content, new { @class = "form-control", placeholder = "Съдържание" })
+        @Html.ValidationMessageFor(b => b.Masterpiece.Content)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(b => b.Masterpiece.GenreId, new { @class = "control-label" })
+        @Html.DropDownListFor(b => b.Masterpiece.GenreId, new SelectList(Model.Genres, "Id", "Name"), new { id = "selectedGenre", @class = "form-control" })
+        @Html.ValidationMessageFor(b => b.Masterpiece.GenreId)
+    </div>
+    <div id="categoriesByGenre" class="form-group"></div>
+
+    <br />
+    <input id="createFormSubmit" type="submit" value="Качи произведение" class="form-control btn-primary" />
+}
+
+@section scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script>
+        $(function () {
+            $.get("/Categories/GetCategoriesByGenreId/1", null, function (data) {
+                $("#categoriesByGenre").html(data);
+            });
+        });
+
+        $('#selectedGenre').change(function () {
+            var id = $('#selectedGenre').val();
+            $.get("/Categories/GetCategoriesByGenreId/" + id, null, function (data) {
+                $("#categoriesByGenre").hide(1000, function () {
+                    $('#categoriesByGenre').html(data).show(1500);
+                });
+            });
+        });
+
+        $('body').on('click', '#createFormSubmit', function () {
+            tinyMCE.triggerSave();
+        });
+    </script>
+}
+

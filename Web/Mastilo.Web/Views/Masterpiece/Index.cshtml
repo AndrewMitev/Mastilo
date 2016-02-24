@@ -1,0 +1,65 @@
+﻿@model Mastilo.Web.ViewModels.MasterpieceViewModels.PagableMasterpieces
+@{
+    if (this.TempData["SuccessCreateMasterpiece"] != null)
+    {
+        <div class="alert alert-dismissible alert-success">
+            <button type="button" class="close" data-dismiss="alert">&#10006;</button>
+            <strong>Well done!</strong> <span>@this.TempData["SuccessCreateMasterpiece"]</span>
+        </div>
+    }
+}
+
+@foreach (var masterpiece in Model.Masterpieces)
+{
+    <div class="col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-md-2">
+                        <img />
+                    </div>
+                    <div class="col-md-4">
+                        <a href="/PieceDetails/@masterpiece.Id">
+                            <h5>@masterpiece.Title</h5>
+                        </a>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <p>@masterpiece.Content</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<nav class="text-center">
+    <ul class="pagination">
+        @if (Model.CurrentPage > 1)
+            {
+            <li>
+                <a href="/Masterpiece/Index/@(Model.CurrentPage - 1)" aria-label="Previous">
+                    <span aria-hidden="true">&larr;Previous</span>
+                </a>
+            </li>
+        }
+        @for (int i = 1; i <= Model.TotalPages; i++)
+            {
+                var className = string.Empty;
+                if (Model.CurrentPage == i)
+                {
+                    className = "active";
+                }
+                <li class="@className"><a href="/Masterpiece/Index/@i">@i</a></li>
+        }
+        @if (Model.CurrentPage < Model.TotalPages)
+            {
+            <li>
+                <a href="/Masterpiece/Index/@(Model.CurrentPage + 1)" aria-label="Next">
+                    <span aria-hidden="true">Next &rarr;</span>
+                </a>
+            </li>
+        }
+    </ul>
+</nav>

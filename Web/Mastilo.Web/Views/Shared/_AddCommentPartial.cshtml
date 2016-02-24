@@ -1,0 +1,17 @@
+﻿@model Mastilo.Web.ViewModels.CommentViewModels.CommentViewModel
+
+<h1>Add Comments:</h1>
+@using (Ajax.BeginForm("PostComment", "Comments", null,
+                            new AjaxOptions
+                            {
+                                UpdateTargetId = "commentsSection",
+                                InsertionMode = InsertionMode.Replace
+                            }))
+{
+    @Html.LabelFor(c => c.Text)
+    @Html.TextBoxFor(c => c.Text)
+    @Html.HiddenFor(c => c.MasterpieceId, new { id = "masterpieceIdForAjax" })
+    <input type="submit" value="Comment!" />
+}
+
+<div id="commentsSection"></div>

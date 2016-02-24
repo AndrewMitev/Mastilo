@@ -1,0 +1,61 @@
+﻿@model Mastilo.Web.Areas.Administration.Models.UserViewModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>Change users'roles:</h3>
+
+<table id="list" class="scroll" cellpadding="0" cellspacing="0"></table>
+
+<div id="pager" class="scroll" style="text-align:center;"></div>
+
+@if (Model != null)
+{
+    Html.RenderPartial("_ChangeUserPartial", Model);
+}
+
+@section Styles{
+    <link href="~/Content/jquery.jqGrid/ui.jqgrid.css" rel="stylesheet" />
+    <link href="~/Content/themes/base/jquery-ui.css" rel="stylesheet" />
+}
+
+@section scripts{
+    <script src="~/Scripts/jquery.jqGrid.min.js"></script>
+    <script src="~/Scripts/i18n/grid.locale-en.js"></script>
+    <script>
+        $(document).ready(function myfunction() {
+            $.jgrid.defaults.width = 800;
+            $.jgrid.defaults.responsive = true;
+            $.jgrid.defaults.styleUI = 'Bootstrap';
+
+            $('#list').jqGrid({
+                caption: "Users",
+                url: '/Administration/Admin/LoadGrid',
+                datatype: "json",
+                contentType: "application/json; charset-utf-8",
+                mtype: 'GET',
+                colNames: ['FirstName', 'LastName', 'UserName', 'Age', 'Role'],
+                colModel: [
+                      { name: 'FirstName', index: 'FirstName', width: 20, formatoptions: { defaultValue: 'No Value Set' } },
+                      { name: 'LastName', index: 'LastName', width: 20, formatoptions: { defaultValue: 'No Value Set' } },
+                      { name: 'UserName', index: 'UserName', width: 20, formatoptions: { defaultValue: 'No Value Set' } },
+                      { name: 'Age', index: 'Age', width: 20, formatoptions: { defaultValue: 'No Value Set' } },
+                      { name: 'Role', index: 'Role', width: 20, formatter: 'showlink', formatoptions: { baseLinkUrl: '/Administration/Admin/ShowChangeUser/', id: 'myName', defaultValue: 'No Value Set' } }
+                ],
+                rowNum: 10,
+                rownumbers: true,
+                rownumWidth: 20,
+                pager: jQuery('#pager'),
+                loadonce: true,
+            });
+
+            jQuery("#list").jqGrid('navGrid', '#pager', { edit: true, add: true, del: true });
+        });
+
+        $('#newRoleSelector').change(function () {
+            $('#userNewRole').val($('#newRoleSelector').val());
+        });
+
+    </script>
+}

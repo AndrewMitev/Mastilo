@@ -1,0 +1,6 @@
+﻿@model IEnumerable<Mastilo.Web.ViewModels.CommentViewModels.CommentViewModel>
+
+@foreach (var comment in Model)
+{
+    Html.RenderPartial("_CommentPartial", comment);
+}

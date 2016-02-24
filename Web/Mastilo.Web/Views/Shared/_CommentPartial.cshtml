@@ -1,0 +1,21 @@
+﻿@model Mastilo.Web.ViewModels.CommentViewModels.CommentViewModel
+
+<div class="well well-lg">
+    <strong>@Model.AuthorName:</strong><small>@Html.DisplayFor(c => c.CreatedOn)</small>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="well well-sm">
+                <p>@Model.Text</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-sm-6" data-id-count="@Model.Id" class="col-sm-6">@Model.Likes.Count() </div>
+                <div class="col-sm-6">
+                    <button data-id="@Model.Id" data-action="up" class="glyphicon glyphicon-thumbs-up btn btn-sm"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

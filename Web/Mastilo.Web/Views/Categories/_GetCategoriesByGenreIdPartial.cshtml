@@ -1,0 +1,8 @@
+﻿@model ICollection<Mastilo.Web.ViewModels.CategoryViewModels.CategoriesViewModel>
+
+
+@foreach (var category in Model)
+{
+    <label class="control-label"><strong>@category.Name</strong></label>
+    <input type="checkbox" name="SelectedGroups" value="@category.Name" />
+}
