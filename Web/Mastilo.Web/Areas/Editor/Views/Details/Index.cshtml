@@ -1,12 +1,15 @@
 ﻿@model Mastilo.Web.Areas.Editor.ViewModels.MasterpiecesApproveModel
 
-<div class="row">
-    <div class="col-md-4"><h4> @Model.AuthorUserName </h4></div>
-    <div class="col-md-4"><h2>@Model.Title </h2></div>
-    <div class="col-md-4"><h2>@Model.Content</h2></div>
+<div class="panel ">
+    <div class="panel-heading">
+        <h3 class="panel-title">@Model.Title - @Model.AuthorUserName</h3>
+    </div>
+    <div class="panel-body">
+       @Html.Raw(@Model.Content)
+    </div>
 </div>
 
-@using (Html.BeginForm("Approve", "Approve", new { @class="form-horizontal"}))
+@using (Html.BeginForm("Approve", "Approve", new { @class = "form-horizontal" }))
 {
     <input type="hidden" name="id" value="@Model.Id" />
     <input type="submit" value="Одобри" class="form-control btn btn-success" />
@@ -14,7 +17,7 @@
 
 <br />
 <br />
-<button id="buttonReject" class="btn btn-danger form-control">Reject</button>
+<button id="buttonReject" class="btn btn-danger form-control">Отхвърли</button>
 
 @using (Html.BeginForm("Reject", "Approve", FormMethod.Post, new { id = "rejectForm", @class = "form-horizontal", style = "display:none" }))
 {

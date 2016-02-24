@@ -9,6 +9,10 @@
     [Authorize(Roles = "Editor")]
     public class ApproveController : Controller
     {
+        private const string ApproveMessage = "Произведението бе успешно одобрено!";
+
+        private const string RejectMessage = "Рецензията бе успешно запазена";
+
         private readonly IMasterpiecesService masterpiecesService;
 
         public ApproveController(IMasterpiecesService masterpiecesService)
@@ -53,7 +57,7 @@
         {
             this.masterpiecesService.UpdatePendingStatus(id, pendingStatus);
 
-            // TODO: Add notification
+            this.TempData["approveMessage"] = ApproveMessage;
             return this.RedirectToAction("Index");
         }
 
@@ -62,7 +66,7 @@
         {
             this.masterpiecesService.AddDisapprovedMessage(model.Id, model.DisapprovedMessage);
 
-            // TODO: Add notification
+            this.TempData["rejectMessage"] = RejectMessage;
             return this.RedirectToAction("Index");
         }
     }

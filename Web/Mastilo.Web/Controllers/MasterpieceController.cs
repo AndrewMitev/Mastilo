@@ -26,10 +26,10 @@
             this.masterpiecesService = masterpiecesService;
         }
 
-        public ActionResult Index(int id = 1)
+        public ActionResult Index(int pageTemp = 1)
         {
             string userId = this.User.Identity.GetUserId();
-            var page = id;
+            var page = pageTemp;
             var masterpieces = this.masterpiecesService.GetMasterpiecesByPage(userId, page, this.itemsPerPage).To<MasterpieceResponseViewModel>().ToList();
             var postsNumber = this.masterpiecesService.Count();
             var totalPages = (int)Math.Ceiling(postsNumber / (decimal)this.itemsPerPage);

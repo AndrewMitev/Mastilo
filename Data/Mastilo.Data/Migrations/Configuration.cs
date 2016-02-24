@@ -1,4 +1,4 @@
-namespace Mastilo.Data.Migrations
+п»їnamespace Mastilo.Data.Migrations
 {
     using System;
     using System.Collections.Generic;
@@ -102,34 +102,34 @@ namespace Mastilo.Data.Migrations
 
         private void SeedGenresAndCategories(ApplicationDbContext context)
         {
-            var prose = new Genre { Name = "Проза" };
-            var poetry = new Genre { Name = "Поезия" };
+            var prose = new Genre { Name = "РџСЂРѕР·Р°" };
+            var poetry = new Genre { Name = "РџРѕРµР·РёСЏ" };
 
             context.Genres.Add(prose);
             context.Genres.Add(poetry);
 
             List<Category> proseCategories = new List<Category>();
-            proseCategories.Add(new Category { Name = "Любовна", Genre = prose });
-            proseCategories.Add(new Category { Name = "Еротична", Genre = prose });
-            proseCategories.Add(new Category { Name = "Хумористична", Genre = prose });
-            proseCategories.Add(new Category { Name = "Пейзажна", Genre = prose });
-            proseCategories.Add(new Category { Name = "За деца", Genre = prose });
-            proseCategories.Add(new Category { Name = "Философска", Genre = prose });
-            proseCategories.Add(new Category { Name = "Гражданска", Genre = prose });
-            proseCategories.Add(new Category { Name = "Бели стихове", Genre = prose });
-            proseCategories.Add(new Category { Name = "Оди и поеми", Genre = prose });
-            proseCategories.Add(new Category { Name = "Източни форми", Genre = prose });
-            proseCategories.Add(new Category { Name = "Пародии", Genre = prose });
+            proseCategories.Add(new Category { Name = "Р›СЋР±РѕРІРЅР°", Genre = prose });
+            proseCategories.Add(new Category { Name = "Р•СЂРѕС‚РёС‡РЅР°", Genre = prose });
+            proseCategories.Add(new Category { Name = "РҐСѓРјРѕСЂРёСЃС‚РёС‡РЅР°", Genre = prose });
+            proseCategories.Add(new Category { Name = "РџРµР№Р·Р°Р¶РЅР°", Genre = prose });
+            proseCategories.Add(new Category { Name = "Р—Р° РґРµС†Р°", Genre = prose });
+            proseCategories.Add(new Category { Name = "Р¤РёР»РѕСЃРѕС„СЃРєР°", Genre = prose });
+            proseCategories.Add(new Category { Name = "Р“СЂР°Р¶РґР°РЅСЃРєР°", Genre = prose });
+            proseCategories.Add(new Category { Name = "Р‘РµР»Рё СЃС‚РёС…РѕРІРµ", Genre = prose });
+            proseCategories.Add(new Category { Name = "РћРґРё Рё РїРѕРµРјРё", Genre = prose });
+            proseCategories.Add(new Category { Name = "РР·С‚РѕС‡РЅРё С„РѕСЂРјРё", Genre = prose });
+            proseCategories.Add(new Category { Name = "РџР°СЂРѕРґРёРё", Genre = prose });
 
             List<Category> poetryCategories = new List<Category>();
-            poetryCategories.Add(new Category { Name = "Разкази", Genre = poetry });
-            poetryCategories.Add(new Category { Name = "Повести и романи", Genre = poetry });
-            poetryCategories.Add(new Category { Name = "Литературни очерци", Genre = poetry });
-            poetryCategories.Add(new Category { Name = "Фантастика и фентъзи", Genre = poetry });
-            poetryCategories.Add(new Category { Name = "Приказки и произведения за деца", Genre = poetry });
-            poetryCategories.Add(new Category { Name = "Хумористична", Genre = poetry });
-            poetryCategories.Add(new Category { Name = "Еротична", Genre = poetry });
-            poetryCategories.Add(new Category { Name = "Писма", Genre = poetry });
+            poetryCategories.Add(new Category { Name = "Р Р°Р·РєР°Р·Рё", Genre = poetry });
+            poetryCategories.Add(new Category { Name = "РџРѕРІРµСЃС‚Рё Рё СЂРѕРјР°РЅРё", Genre = poetry });
+            poetryCategories.Add(new Category { Name = "Р›РёС‚РµСЂР°С‚СѓСЂРЅРё РѕС‡РµСЂС†Рё", Genre = poetry });
+            poetryCategories.Add(new Category { Name = "Р¤Р°РЅС‚Р°СЃС‚РёРєР° Рё С„РµРЅС‚СЉР·Рё", Genre = poetry });
+            poetryCategories.Add(new Category { Name = "РџСЂРёРєР°Р·РєРё Рё РїСЂРѕРёР·РІРµРґРµРЅРёСЏ Р·Р° РґРµС†Р°", Genre = poetry });
+            poetryCategories.Add(new Category { Name = "РҐСѓРјРѕСЂРёСЃС‚РёС‡РЅР°", Genre = poetry });
+            poetryCategories.Add(new Category { Name = "Р•СЂРѕС‚РёС‡РЅР°", Genre = poetry });
+            poetryCategories.Add(new Category { Name = "РџРёСЃРјР°", Genre = poetry });
 
             foreach (var category in proseCategories)
             {
@@ -146,18 +146,18 @@ namespace Mastilo.Data.Migrations
 
         private void SeedMasterpieces(ApplicationDbContext context, User user, User secondUser)
         {
-            var prose = context.Genres.FirstOrDefault(x => x.Name == "Проза");
+            var prose = context.Genres.FirstOrDefault(x => x.Name == "РџСЂРѕР·Р°");
 
             for (int i = 1; i <= 20; i++)
             {
                 var masterpiece = new Masterpiece
                 {
                     Title = $"Hello {i}",
-                    Content = $"Това е съдържание номер {i}",
+                    Content = $"РўРѕРІР° Рµ СЃСЉРґСЉСЂР¶Р°РЅРёРµ РЅРѕРјРµСЂ {i}",
                     SeenBy = new List<SeenBy> { new SeenBy { SeenByUsername = "Pesho" }, new SeenBy { SeenByUsername = "Gosho" } },
                     Author = user,
                     Genre = prose,
-                    Comments = new List<Comment> { new Comment { User = secondUser, Text = "Много смешно" }, new Comment { User = secondUser, Text = "хахахах" } },
+                    Comments = new List<Comment> { new Comment { User = secondUser, Text = "РњРЅРѕРіРѕ СЃРјРµС€РЅРѕ" }, new Comment { User = secondUser, Text = "С…Р°С…Р°С…Р°С…" } },
                     Rates = new List<Rate> { new Rate { User = secondUser, Value = 5 } }
                 };
 

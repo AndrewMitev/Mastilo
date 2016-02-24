@@ -1,0 +1,26 @@
+﻿@model  Mastilo.Web.ViewModels.UserViewModels.UserAndMasterpiecesViewModel
+
+<ul class="nav nav-tabs">
+    <li class="active"><a href="#home" data-toggle="tab">За мен</a></li>
+    <li><a href="#profile" data-toggle="tab">Произведения</a></li>
+    <li><a href="#comments" data-toggle="tab">Коментари от мен</a></li>
+</ul>
+<div id="myTabContent" class="tab-content">
+    <div class="tab-pane fade active in" id="home">
+        @Html.Partial("_UserDetailsPartial", Model.UserResponse)
+    </div>
+    <div class="tab-pane fade" id="profile">
+        @Html.Partial("_UserMasterpiecesPartial", Model.Masterpieces)
+    </div>
+    <div class="tab-pane fade" id="comments">
+        @Html.Partial("_UserCommentsPartial", Model)
+    </div>
+</div> 
+
+@section UserInfo{
+   <p>this is @Model.UserResponse.UserName's homepage!
+}
+
+
+
+

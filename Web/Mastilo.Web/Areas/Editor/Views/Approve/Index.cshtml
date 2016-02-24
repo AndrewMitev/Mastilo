@@ -2,6 +2,22 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+@if (this.TempData["approveMessage"] != null)
+{
+    <div class="alert alert-dismissible alert-success">
+        <button type="button" class="close" data-dismiss="alert">&#10006;</button>
+        <strong>Well done!</strong> @this.ViewData["approveMessage"]
+    </div>
+}
+
+@if (this.TempData["rejectMessage"] != null)
+{
+    <div class="alert alert-dismissible alert-danger">
+        <button type="button" class="close" data-dismiss="alert">&#10006;</button>
+        <strong>Oh snap!</strong> @this.ViewData["rejectMessage"]
+    </div>
+}
+
 <h3>Masterpiece edit:</h3>
 
 <table id="list" class="scroll" cellpadding="0" cellspacing="0"></table>

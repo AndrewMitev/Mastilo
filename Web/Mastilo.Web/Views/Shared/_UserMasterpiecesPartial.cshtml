@@ -1,0 +1,29 @@
+﻿@model Mastilo.Web.ViewModels.MasterpieceViewModels.PagableMasterpieces
+
+@foreach (var masterpiece in Model.Masterpieces)
+{
+    if (masterpiece.Content.Length > 60)
+    {
+        masterpiece.Content = masterpiece.Content.Substring(0, 60) + "...";
+    }
+
+    <div class="col-md-4 col-md-offset-1">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-md-2">
+                        <img width="40" height="60" src="~/Content/Images/pero.jpg" />
+                    </div>
+                    <div class="col-md-4">
+                        <a href="/PieceDetails/@masterpiece.Id">
+                            <h5>@masterpiece.Title</h5>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-body">
+                <p>@Html.Raw(masterpiece.Content)</p>
+            </div>
+        </div>
+    </div>
+}

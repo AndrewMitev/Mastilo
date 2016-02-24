@@ -208,11 +208,13 @@
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CategoriesController.cs" />
     <Compile Include="Controllers\CommentsController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\ExploreController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MasterpieceController.cs" />
     <Compile Include="Controllers\PieceDetailsController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="GlimpseSecurityPolicy.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -244,11 +246,14 @@
     <Compile Include="ViewModels\MasterpieceViewModels\MasterpieceRequestViewModel.cs" />
     <Compile Include="ViewModels\MasterpieceViewModels\MasterpieceResponseViewModel.cs" />
     <Compile Include="ViewModels\MasterpieceViewModels\PagableMasterpieces.cs" />
+    <Compile Include="ViewModels\UserViewModels\UserAndMasterpiecesViewModel.cs" />
+    <Compile Include="ViewModels\UserViewModels\UserResponseViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\Images\book.jpg" />
+    <Content Include="Content\Images\404.jpg" />
+    <Content Include="Content\Images\bad-request.jpg" />
     <Content Include="Content\Images\bookTest.jpg" />
     <Content Include="Content\Images\pero.jpg" />
     <Content Include="Content\jquery.jqGrid\ellipsis-xbl.xml" />
@@ -594,6 +599,10 @@
     <Content Include="Scripts\tinymce\skins\lightgray\fonts\tinymce.woff" />
     <Content Include="Views\Shared\_CommentPartial.cshtml" />
     <Content Include="Views\PieceDetails\DisplayTemplates\DateTime.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\Shared\_UserMasterpiecesPartial.cshtml" />
+    <Content Include="Views\Error\NotFound.cshtml" />
+    <Content Include="Views\Error\BadRequest.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

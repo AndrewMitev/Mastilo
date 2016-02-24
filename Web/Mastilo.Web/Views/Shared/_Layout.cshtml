@@ -47,7 +47,8 @@
         </div>
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            @RenderSection("UserInfo", required: false)
+            <p>&copy; @DateTime.Now.Year - Сайт за лично творчество</p>
         </footer>
     </div>
 
