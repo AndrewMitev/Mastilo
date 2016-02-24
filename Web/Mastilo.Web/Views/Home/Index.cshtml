@@ -2,6 +2,13 @@
 
 @foreach (var masterpiece in Model)
 {
-    <h1>@Html.Raw(masterpiece.Title)</h1>
-    <h2>@Html.Raw(masterpiece.DisapprovedMessage)</h2>
+    <h1>@masterpiece.Title</h1>
+    <h2>Статус: отхвърлено</h2>
+    <h3>@Html.Raw(masterpiece.SanitizedDisapprovedMessage)</h3>
+    <hr />
+}
+
+
+@section scripts{
+    @Scripts.Render("~/bundles/likeFunctionsBundle");
 }

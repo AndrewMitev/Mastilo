@@ -2,7 +2,6 @@
 
 @if (User.Identity.IsAuthenticated)
 {
-    <h1>Add Comments:</h1>
     using (Ajax.BeginForm("PostComment", "Comments", new { @class = "form-horizontal", role = "form" },
                                         new AjaxOptions
                                         {
@@ -10,9 +9,11 @@
                                             InsertionMode = InsertionMode.Replace
                                         }))
     {
-        @Html.TextAreaFor(c => c.Text)
+        <h4>Коментирай:</h4>
+        @Html.TextAreaFor(c => c.Text, new { style="width: 450px; height: 100px;" })
         @Html.HiddenFor(c => c.MasterpieceId, new { id = "masterpieceIdForAjax" })
-        <input class="btn btn-primary" type="submit" value="Comment!" />
+        <br />
+        <input class="btn btn-primary" type="submit" value="Добави!" />
     }
 }
 else
@@ -21,5 +22,5 @@ else
         <p>Регистрирай се за да коментираш!</p>
     </div>
 }
-
+<hr />
 <div id="commentsSection"></div>

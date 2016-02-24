@@ -26,10 +26,10 @@
             this.masterpiecesService = masterpiecesService;
         }
 
-        public ActionResult Index(int pageTemp = 1)
+        public ActionResult Index(int id = 1)
         {
             string userId = this.User.Identity.GetUserId();
-            var page = pageTemp;
+            var page = id;
             var masterpieces = this.masterpiecesService.GetMasterpiecesByPage(userId, page, this.itemsPerPage).To<MasterpieceResponseViewModel>().ToList();
             var postsNumber = this.masterpiecesService.Count();
             var totalPages = (int)Math.Ceiling(postsNumber / (decimal)this.itemsPerPage);
@@ -62,7 +62,7 @@
         {
             if (!this.ModelState.IsValid)
             {
-                // TODO: Do Something!
+                return this.RedirectToAction("Create");
             }
 
             var masterpiece = model.Masterpiece;
