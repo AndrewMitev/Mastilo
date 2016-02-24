@@ -1,9 +1,9 @@
 ﻿namespace Mastilo.Web.Areas.Editor.Controllers
 {
-    using Infrastructure.Mapping;
-    using Services.Data.Interfaces;
     using System.Linq;
     using System.Web.Mvc;
+    using Infrastructure.Mapping;
+    using Services.Data.Interfaces;
     using ViewModels;
 
     [Authorize(Roles = "Editor")]
@@ -54,7 +54,6 @@
             this.masterpiecesService.UpdatePendingStatus(id, pendingStatus);
 
             // TODO: Add notification
-
             return this.RedirectToAction("Index");
         }
 
@@ -64,7 +63,6 @@
             this.masterpiecesService.AddDisapprovedMessage(model.Id, model.DisapprovedMessage);
 
             // TODO: Add notification
-
             return this.RedirectToAction("Index");
         }
     }

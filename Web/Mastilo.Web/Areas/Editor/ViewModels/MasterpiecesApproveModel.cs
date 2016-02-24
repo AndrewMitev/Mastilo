@@ -1,10 +1,11 @@
 ﻿namespace Mastilo.Web.Areas.Editor.ViewModels
 {
-    using Mastilo.Data.Models;
-    using Mastilo.Web.Infrastructure.Mapping;
     using System.ComponentModel.DataAnnotations;
-    using AutoMapper;
     using System.Web.Mvc;
+    using AutoMapper;
+    using Data.Models;
+    using Infrastructure.Mapping;
+
     public class MasterpiecesApproveModel : IMapFrom<Masterpiece>, IHaveCustomMappings
     {
         public int Id { get; set; }

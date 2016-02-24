@@ -1,10 +1,10 @@
 ﻿namespace Mastilo.Web.Areas.Editor.ViewModels
 {
-    using Infrastructure.Mapping;
-    using Data.Models;
+    using System;
     using System.ComponentModel.DataAnnotations;
     using AutoMapper;
-    using System;
+    using Data.Models;
+    using Infrastructure.Mapping;
 
     public class MasterpieceResponseViewModel : IMapFrom<Masterpiece>, IHaveCustomMappings
     {
@@ -25,8 +25,6 @@
         public string AuthorFirstName { get; set; }
 
         public DateTime? CreatedOn { get; set; }
-
-        //TODO: Add rest data!
 
         public void CreateMappings(IMapperConfiguration configuration)
         {

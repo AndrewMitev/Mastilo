@@ -1,9 +1,10 @@
 ﻿namespace Mastilo.Services.Data
 {
+    using System.Linq;
+
     using Mastilo.Data.Common;
     using Mastilo.Data.Models;
     using Mastilo.Services.Data.Interfaces;
-    using System.Linq;
 
     public class UsersService : IUsersService
     {
@@ -18,7 +19,7 @@
         {
             return this.users
                 .All()
-                .Where(u => !u.Roles.Select(y => y.UserId).Contains(""));
+                .Where(u => !u.Roles.Select(y => y.UserId).Contains(string.Empty));
         }
 
         public User GetById(string id)

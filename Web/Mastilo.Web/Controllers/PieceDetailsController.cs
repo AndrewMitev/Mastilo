@@ -1,12 +1,9 @@
-﻿using Mastilo.Services.Data.Interfaces;
-using Mastilo.Web.ViewModels.MasterpieceViewModels;
-using System.Web.Mvc;
-using Mastilo.Web.Infrastructure.Mapping;
-using System;
-using System.Globalization;
-
-namespace Mastilo.Web.Controllers
+﻿namespace Mastilo.Web.Controllers
 {
+    using System.Web.Mvc;
+    using Mastilo.Services.Data.Interfaces;
+    using Mastilo.Web.ViewModels.MasterpieceViewModels;
+
     public class PieceDetailsController : BaseController
     {
         private readonly IMasterpiecesService masterpiecesService;
@@ -21,7 +18,7 @@ namespace Mastilo.Web.Controllers
             var detailedMasterpiece = this.masterpiecesService.GetMasterpieceById(id);
             var piece = this.Mapper.Map<MasterpieceResponseViewModel>(detailedMasterpiece);
 
-            return View(piece);
+            return this.View(piece);
         }
     }
 }

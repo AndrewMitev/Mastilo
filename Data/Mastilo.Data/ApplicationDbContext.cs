@@ -16,11 +16,6 @@
         {
         }
 
-        public static ApplicationDbContext Create()
-        {
-            return new ApplicationDbContext();
-        }
-
         public IDbSet<Image> Images { get; set; }
 
         public IDbSet<Category> Categories { get; set; }
@@ -33,11 +28,9 @@
 
         public IDbSet<Masterpiece> Masterpieces { get; set; }
 
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        public static ApplicationDbContext Create()
         {
-            base.OnModelCreating(modelBuilder);
-            modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
-
+            return new ApplicationDbContext();
         }
 
         public override int SaveChanges()
@@ -46,7 +39,6 @@
             try
             {
                 return base.SaveChanges();
-
             }
             catch (DbEntityValidationException ex)
             {
@@ -64,6 +56,12 @@
                 // Throw a new DbEntityValidationException with the improved exception message.
                 throw new DbEntityValidationException(exceptionMessage, ex.EntityValidationErrors);
             }
+        }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
         }
 
         private void ApplyAuditInfoRules()

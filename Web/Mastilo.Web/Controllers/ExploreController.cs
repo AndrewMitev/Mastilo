@@ -1,9 +1,9 @@
 ﻿namespace Mastilo.Web.Controllers
 {
-    using Infrastructure.Mapping;
-    using Services.Data.Interfaces;
     using System.Linq;
     using System.Web.Mvc;
+    using Infrastructure.Mapping;
+    using Services.Data.Interfaces;
     using ViewModels.MasterpieceViewModels;
 
     public class ExploreController : BaseController

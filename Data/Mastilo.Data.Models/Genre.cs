@@ -1,8 +1,8 @@
 ﻿namespace Mastilo.Data.Models
 {
-    using Common.Models;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+    using Common.Models;
 
     public class Genre : BaseModel<int>
     {

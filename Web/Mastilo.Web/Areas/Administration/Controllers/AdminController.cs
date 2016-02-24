@@ -1,14 +1,14 @@
-﻿using Mastilo.Data;
-using Mastilo.Data.Models;
-using Mastilo.Services.Data.Interfaces;
-using Mastilo.Web.Areas.Administration.Models;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
-using System.Linq;
-using System.Web.Mvc;
-
-namespace Mastilo.Web.Areas.Administration.Controllers
+﻿namespace Mastilo.Web.Areas.Administration.Controllers
 {
+    using System.Linq;
+    using System.Web.Mvc;
+    using Mastilo.Data;
+    using Mastilo.Data.Models;
+    using Mastilo.Services.Data.Interfaces;
+    using Mastilo.Web.Areas.Administration.Models;
+    using Microsoft.AspNet.Identity;
+    using Microsoft.AspNet.Identity.EntityFramework;
+
     [Authorize(Roles = "Administration")]
     public class AdminController : Controller
     {
@@ -23,7 +23,7 @@ namespace Mastilo.Web.Areas.Administration.Controllers
 
         public ActionResult Index()
         {
-            return View();
+            return this.View();
         }
 
         public ActionResult ShowChangeUser(string id)
@@ -85,7 +85,7 @@ namespace Mastilo.Web.Areas.Administration.Controllers
             return this.Json(jsonData, JsonRequestBehavior.AllowGet);
         }
 
-        public ActionResult ChangeRole(string userId, string role) 
+        public ActionResult ChangeRole(string userId, string role)
         {
             var rolesForUser = this.userManager.GetRoles(userId).ToList();
 

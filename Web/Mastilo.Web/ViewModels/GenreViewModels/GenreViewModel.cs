@@ -1,11 +1,11 @@
 ﻿namespace Mastilo.Web.ViewModels.GenreViewModels
 {
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     using CategoryViewModels;
     using MasterpieceViewModels;
     using Mastilo.Data.Models;
     using Mastilo.Web.Infrastructure.Mapping;
-    using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
 
     public class GenreViewModel : IMapFrom<Genre>
     {

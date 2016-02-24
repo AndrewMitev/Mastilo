@@ -1,9 +1,9 @@
 ﻿namespace Mastilo.Web.ViewModels.MasterpieceViewModels
 {
-    using Mastilo.Web.ViewModels.GenreViewModels;
     using System.Collections.Generic;
+    using Mastilo.Web.ViewModels.GenreViewModels;
 
-    public class MasterpieceRequestDataModel 
+    public class MasterpieceRequestDataModel
     {
         public ICollection<GenreViewModel> Genres { get; set; }
 

@@ -1,13 +1,13 @@
-﻿using Mastilo.Data.Models;
-using Mastilo.Services.Data.Interfaces;
-using Mastilo.Web.Infrastructure.Mapping;
-using Mastilo.Web.ViewModels.CommentViewModels;
-using Microsoft.AspNet.Identity;
-using System.Linq;
-using System.Web.Mvc;
-
-namespace Mastilo.Web.Controllers
+﻿namespace Mastilo.Web.Controllers
 {
+    using System.Linq;
+    using System.Web.Mvc;
+    using Mastilo.Data.Models;
+    using Mastilo.Services.Data.Interfaces;
+    using Mastilo.Web.Infrastructure.Mapping;
+    using Mastilo.Web.ViewModels.CommentViewModels;
+    using Microsoft.AspNet.Identity;
+
     [Authorize]
     public class CommentsController : BaseController
     {

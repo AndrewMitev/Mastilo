@@ -1,9 +1,10 @@
 ﻿namespace Mastilo.Web.Areas.Administration.Models
 {
+    using System.Linq;
+
     using AutoMapper;
     using Data.Models;
     using Infrastructure.Mapping;
-    using System.Linq;
 
     public class UserViewModel : IMapFrom<User>, IHaveCustomMappings
     {

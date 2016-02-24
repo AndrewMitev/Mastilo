@@ -1,9 +1,9 @@
-﻿using Mastilo.Data.Models;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace Mastilo.Services.Data.Interfaces
+﻿namespace Mastilo.Services.Data.Interfaces
 {
+    using System.Collections.Generic;
+    using System.Linq;
+    using Mastilo.Data.Models;
+
     public interface IMasterpiecesService
     {
         IQueryable AllSortedByDate();

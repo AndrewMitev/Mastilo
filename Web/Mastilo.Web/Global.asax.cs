@@ -1,15 +1,15 @@
-﻿using Mastilo.Data.Migrations;
-using Mastilo.Data;
-using Mastilo.Web.App_Start;
-using System.Data.Entity;
-using System.Web.Mvc;
-using System.Web.Optimization;
-using System.Web.Routing;
-using Mastilo.Web.Infrastructure.Mapping;
-using System.Reflection;
-
-namespace Mastilo.Web
+﻿namespace Mastilo.Web
 {
+    using System.Data.Entity;
+    using System.Reflection;
+    using System.Web.Mvc;
+    using System.Web.Optimization;
+    using System.Web.Routing;
+    using Mastilo.Data;
+    using Mastilo.Data.Migrations;
+    using Mastilo.Web.App_Start;
+    using Mastilo.Web.Infrastructure.Mapping;
+
     public class MvcApplication : System.Web.HttpApplication
     {
         protected void Application_Start()

@@ -1,25 +1,24 @@
 ﻿namespace Mastilo.Web.Controllers
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Web.Mvc;
     using Data.Models;
     using Mastilo.Services.Data.Interfaces;
     using Mastilo.Web.Infrastructure.Mapping;
     using Mastilo.Web.ViewModels.GenreViewModels;
     using Mastilo.Web.ViewModels.MasterpieceViewModels;
     using Microsoft.AspNet.Identity;
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Web.Mvc;
     using ViewModels.CategoryViewModels;
 
     [Authorize]
     public class MasterpieceController : BaseController
     {
-        private readonly int ItemsPerPage = 10;
+        private readonly int itemsPerPage = 10;
 
         private readonly IGenresService genresService;
         private readonly IMasterpiecesService masterpiecesService;
-
 
         public MasterpieceController(IGenresService genresService, IMasterpiecesService masterpiecesService)
         {
@@ -31,9 +30,9 @@
         {
             string userId = this.User.Identity.GetUserId();
             var page = id;
-            var masterpieces = this.masterpiecesService.GetMasterpiecesByPage(userId, page, ItemsPerPage).To<MasterpieceResponseViewModel>().ToList();
+            var masterpieces = this.masterpiecesService.GetMasterpiecesByPage(userId, page, this.itemsPerPage).To<MasterpieceResponseViewModel>().ToList();
             var postsNumber = this.masterpiecesService.Count();
-            var totalPages = (int)Math.Ceiling(postsNumber / (decimal)ItemsPerPage);
+            var totalPages = (int)Math.Ceiling(postsNumber / (decimal)this.itemsPerPage);
 
             var viewModel = new PagableMasterpieces
             {
@@ -54,14 +53,14 @@
                 Genres = genres,
                 Masterpiece = new MasterpieceRequestViewModel()
             };
-             
+
             return this.View(data);
         }
 
         [ValidateAntiForgeryToken]
         public ActionResult CreateMasterpiece(MasterpieceRequestDataModel model)
         {
-            if (!ModelState.IsValid)
+            if (!this.ModelState.IsValid)
             {
                 // TODO: Do Something!
             }

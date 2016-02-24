@@ -1,9 +1,9 @@
 ﻿namespace Mastilo.Data.Models
 {
-    using Common.Models;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
+    using Common.Models;
 
     public class Comment : BaseModel<int>
     {

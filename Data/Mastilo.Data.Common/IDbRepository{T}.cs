@@ -1,7 +1,7 @@
 ﻿namespace Mastilo.Data.Common
 {
-    using Mastilo.Data.Common.Models;
     using System.Linq;
+    using Mastilo.Data.Common.Models;
 
     public interface IDbRepository<T> : IDbRepository<T, int>
         where T : BaseModel<int>

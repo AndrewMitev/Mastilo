@@ -5,7 +5,8 @@
     using System.Linq;
     using System.Threading.Tasks;
 
-    public interface IUserDbRepository<T> : IDisposable where T : class
+    public interface IUserDbRepository<T> : IDisposable
+        where T : class
     {
         IQueryable<T> All();
 

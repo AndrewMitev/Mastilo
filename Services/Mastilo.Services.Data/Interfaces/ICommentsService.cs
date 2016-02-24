@@ -1,7 +1,7 @@
 ﻿namespace Mastilo.Services.Data.Interfaces
 {
-    using Mastilo.Data.Models;
     using System.Linq;
+    using Mastilo.Data.Models;
 
     public interface ICommentsService
     {

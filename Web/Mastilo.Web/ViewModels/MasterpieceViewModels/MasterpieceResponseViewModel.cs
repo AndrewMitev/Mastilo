@@ -1,13 +1,13 @@
 ﻿namespace Mastilo.Web.ViewModels.MasterpieceViewModels
 {
-    using Infrastructure.Mapping;
-    using Data.Models;
-    using System.ComponentModel.DataAnnotations;
-    using AutoMapper;
     using System;
     using System.Collections.Generic;
-    using CommentViewModels;
+    using System.ComponentModel.DataAnnotations;
+    using AutoMapper;
     using CategoryViewModels;
+    using CommentViewModels;
+    using Data.Models;
+    using Infrastructure.Mapping;
     using Services.Web;
 
     public class MasterpieceResponseViewModel : IMapFrom<Masterpiece>, IHaveCustomMappings
@@ -31,7 +31,8 @@
         [MinLength(10, ErrorMessage = "Текстът е твърде кратък!")]
         public string Content { get; set; }
 
-        public string SanitizedContent {
+        public string SanitizedContent
+        {
             get
             {
                 return this.sanitizer.Sanitize(this.Content);
@@ -63,8 +64,6 @@
         public ICollection<CategoriesViewModel> Categories { get; set; }
 
         public ICollection<CommentViewModel> Comments { get; set; }
-
-        //TODO: Add rest data!
 
         public void CreateMappings(IMapperConfiguration configuration)
         {

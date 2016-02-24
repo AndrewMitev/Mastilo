@@ -13,8 +13,8 @@ namespace Mastilo.Data.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
-            AutomaticMigrationDataLossAllowed = true;
+            this.AutomaticMigrationsEnabled = true;
+            this.AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(ApplicationDbContext context)
@@ -142,7 +142,6 @@ namespace Mastilo.Data.Migrations
             }
 
             context.SaveChanges();
-
         }
 
         private void SeedMasterpieces(ApplicationDbContext context, User user, User secondUser)

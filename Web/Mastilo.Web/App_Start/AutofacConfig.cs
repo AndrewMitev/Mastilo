@@ -1,19 +1,17 @@
-﻿using Autofac;
-using Autofac.Integration.Mvc;
-using Mastilo.Data;
-using Mastilo.Data.Common;
-using Mastilo.Services.Data.Interfaces;
-using Mastilo.Services.Web;
-using Mastilo.Web.Controllers;
-using System;
-using System.Data.Entity;
-using System.Diagnostics;
-using System.Reflection;
-using System.Web.Mvc;
-
-namespace Mastilo.Web.App_Start
+﻿namespace Mastilo.Web.App_Start
 {
-    public static  class AutofacConfig
+    using System.Data.Entity;
+    using System.Reflection;
+    using System.Web.Mvc;
+    using Autofac;
+    using Autofac.Integration.Mvc;
+    using Mastilo.Data;
+    using Mastilo.Data.Common;
+    using Mastilo.Services.Data.Interfaces;
+    using Mastilo.Services.Web;
+    using Mastilo.Web.Controllers;
+
+    public static class AutofacConfig
     {
         public static void RegisterAutofac()
         {

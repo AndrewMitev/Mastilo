@@ -1,17 +1,15 @@
-﻿using Mastilo.Web.ViewModels.CategoryViewModels;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Web.Mvc;
-using System.ComponentModel;
-using Mastilo.Services.Web;
-
-namespace Mastilo.Web.ViewModels.MasterpieceViewModels
+﻿namespace Mastilo.Web.ViewModels.MasterpieceViewModels
 {
+    using System.Collections.Generic;
+    using System.ComponentModel;
+    using System.ComponentModel.DataAnnotations;
+    using System.Web.Mvc;
+    using Mastilo.Web.ViewModels.CategoryViewModels;
+
     public class MasterpieceRequestViewModel
     {
-
         public MasterpieceRequestViewModel()
-        {           
+        {
             this.Categories = new HashSet<CategoriesViewModel>();
         }
 

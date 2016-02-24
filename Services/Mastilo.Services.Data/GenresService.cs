@@ -1,9 +1,11 @@
 ﻿namespace Mastilo.Services.Data
 {
+    using System.Linq;
+
     using Mastilo.Data.Common;
     using Mastilo.Data.Models;
     using Mastilo.Services.Data.Interfaces;
-    using System.Linq;
+
     public class GenresService : IGenresService
     {
         private readonly IDbRepository<Genre> genres;

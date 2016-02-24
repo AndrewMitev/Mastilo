@@ -1,11 +1,11 @@
 ﻿namespace Mastilo.Web.ViewModels.CommentViewModels
 {
+    using System;
+    using System.Collections.Generic;
     using AutoMapper;
     using Data.Models;
     using Infrastructure.Mapping;
-    using System.Collections.Generic;
     using LikeViewModels;
-    using System;
 
     public class CommentViewModel : IMapFrom<Comment>, IMapTo<Comment>, IHaveCustomMappings
     {

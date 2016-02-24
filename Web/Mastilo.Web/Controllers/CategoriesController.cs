@@ -1,8 +1,8 @@
 ﻿namespace Mastilo.Web.Controllers
 {
-    using Services.Data.Interfaces;
     using System.Linq;
     using System.Web.Mvc;
+    using Services.Data.Interfaces;
     using ViewModels.GenreViewModels;
 
     [Authorize]

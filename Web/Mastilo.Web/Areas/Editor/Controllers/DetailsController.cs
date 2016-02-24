@@ -1,9 +1,10 @@
 ﻿namespace Mastilo.Web.Areas.Editor.Controllers
 {
+    using System.Web.Mvc;
     using Mastilo.Services.Data.Interfaces;
     using Mastilo.Web.Controllers;
-    using System.Web.Mvc;
     using ViewModels;
+
     public class DetailsController : BaseController
     {
         private readonly IMasterpiecesService masterpiecesService;
@@ -18,7 +19,7 @@
             var masterpiece = this.masterpiecesService.GetMasterpieceById(id);
             var viewModel = this.Mapper.Map<MasterpiecesApproveModel>(masterpiece);
 
-            return View(viewModel);
+            return this.View(viewModel);
         }
     }
 }

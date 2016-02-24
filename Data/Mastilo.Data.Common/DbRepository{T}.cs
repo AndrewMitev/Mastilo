@@ -1,11 +1,10 @@
-﻿using Mastilo.Data.Common.Models;
-using System;
-using System.Data.Entity;
-using System.Linq;
-
-
-namespace Mastilo.Data.Common
+﻿namespace Mastilo.Data.Common
 {
+    using System;
+    using System.Data.Entity;
+    using System.Linq;
+    using Mastilo.Data.Common.Models;
+
     public class DbRepository<T> : IDbRepository<T>
         where T : BaseModel<int>
     {

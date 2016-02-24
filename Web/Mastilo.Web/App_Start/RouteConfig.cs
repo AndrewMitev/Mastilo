@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using System.Web.Routing;
-
-namespace Mastilo.Web
+﻿namespace Mastilo.Web
 {
+    using System.Web.Mvc;
+    using System.Web.Routing;
+
     public class RouteConfig
     {
         public static void RegisterRoutes(RouteCollection routes)
@@ -16,14 +12,12 @@ namespace Mastilo.Web
             routes.MapRoute(
                 name: "MasterpiecesDetails",
                 url: "PieceDetails/{id}",
-                defaults: new { controller = "PieceDetails", action = "Index", id = UrlParameter.Optional }
-            );
+                defaults: new { controller = "PieceDetails", action = "Index", id = UrlParameter.Optional });
 
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
-            );
+                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional });
         }
     }
 }
