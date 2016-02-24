@@ -37,22 +37,22 @@
             var user = new User
             {
                 Email = "test@test.bg",
-                UserName = "Lithiumm",
+                UserName = "test@test.bg",
                 Age = 17,
                 FirstName = "Rally",
                 LastName = "Br.",
-                PasswordHash = hasher.HashPassword("1234"),
+                PasswordHash = hasher.HashPassword("123456"),
                 SecurityStamp = Guid.NewGuid().ToString()
             };
 
             var secondUser = new User
             {
                 Email = "pesho@pesho.bg",
-                UserName = "peshaka",
+                UserName = "pesho@pesho.bg",
                 Age = 90,
                 FirstName = "Petur",
                 LastName = "Mitov",
-                PasswordHash = hasher.HashPassword("1234"),
+                PasswordHash = hasher.HashPassword("123456"),
                 SecurityStamp = Guid.NewGuid().ToString()
             };
 
