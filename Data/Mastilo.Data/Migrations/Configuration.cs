@@ -25,9 +25,11 @@ namespace Mastilo.Data.Migrations
                 var manager = new RoleManager<IdentityRole>(store);
                 var adminRole = new IdentityRole { Name = "Administration" };
                 var editorRole = new IdentityRole { Name = "Editor" };
+                var userRole = new IdentityRole { Name = "User" };
 
                 manager.Create(adminRole);
                 manager.Create(editorRole);
+                manager.Create(userRole);
             }
 
             var hasher = new PasswordHasher();
@@ -80,10 +82,11 @@ namespace Mastilo.Data.Migrations
                 userManager.Create(editor);
                 userManager.AddToRole(editor.Id, "Editor");
 
-                context.Users.Add(user);
-                context.Users.Add(secondUser);
+                userManager.Create(user);
+                userManager.AddToRole(user.Id, "User");
 
-                context.SaveChanges();
+                userManager.Create(secondUser);
+                userManager.AddToRole(secondUser.Id, "User");
             }
 
             if (!context.Genres.Any())

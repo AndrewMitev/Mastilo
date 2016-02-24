@@ -170,3 +170,6 @@ C:\Users\Митрандир\Desktop\project\Mastilo\Mastilo\Web\Mastilo.Web\bin\
 C:\Users\Митрандир\Desktop\project\Mastilo\Mastilo\Web\Mastilo.Web\obj\Debug\Mastilo.Web.csprojResolveAssemblyReference.cache
 C:\Users\Митрандир\Desktop\project\Mastilo\Mastilo\Web\Mastilo.Web\obj\Debug\Mastilo.Web.dll
 C:\Users\Митрандир\Desktop\project\Mastilo\Mastilo\Web\Mastilo.Web\obj\Debug\Mastilo.Web.pdb
+C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Web\Mastilo.Web\bin\HtmlSanitizer.dll
+C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Web\Mastilo.Web\bin\CsQuery.dll
+C:\Users\Митрандир\Desktop\Mastilo\Mastilo\Web\Mastilo.Web\bin\CsQuery.xml
