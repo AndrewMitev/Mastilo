@@ -18,7 +18,7 @@
 
         IQueryable<Masterpiece> AllPendingAssessed();
 
-        IQueryable<Masterpiece> AllPendingNotAssessed();
+        IQueryable<Masterpiece> AllNotAssessed();
 
         Masterpiece UpdatePendingStatus(int id, bool pendingStatus);
 

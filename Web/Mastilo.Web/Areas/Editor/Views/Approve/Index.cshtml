@@ -1,12 +1,8 @@
-﻿@{
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
-
-@if (this.TempData["approveMessage"] != null)
+﻿@if (this.TempData["approveMessage"] != null)
 {
     <div class="alert alert-dismissible alert-success">
         <button type="button" class="close" data-dismiss="alert">&#10006;</button>
-        <strong>Well done!</strong> @this.ViewData["approveMessage"]
+        <strong>Одобрено!</strong> @this.ViewData["approveMessage"]
     </div>
 }
 
@@ -14,11 +10,11 @@
 {
     <div class="alert alert-dismissible alert-succes">
         <button type="button" class="close" data-dismiss="alert">&#10006;</button>
-        <strong>Oh snap!</strong> @this.ViewData["rejectMessage"]
+        <strong>Рецензия запазена!</strong> @this.ViewData["rejectMessage"]
     </div>
 }
 
-<h3>Masterpiece edit:</h3>
+<h3>Произведения за одобрение:</h3>
 
 <table id="list" class="scroll" cellpadding="0" cellspacing="0"></table>
 

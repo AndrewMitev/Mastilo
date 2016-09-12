@@ -28,7 +28,7 @@
         public ActionResult LoadGrid()
         {
             var pieces = this.masterpiecesService
-                .AllPendingNotAssessed()
+                .AllNotAssessed()
                 .To<MasterpiecesApproveModel>()
                 .ToList();
 
@@ -53,9 +53,9 @@
             return this.Json(jsonData, JsonRequestBehavior.AllowGet);
         }
 
-        public ActionResult Approve(int id, bool pendingStatus = false)
+        public ActionResult Approve(int id)
         {
-            this.masterpiecesService.UpdatePendingStatus(id, pendingStatus);
+            this.masterpiecesService.UpdatePendingStatus(id, true);
 
             this.TempData["approveMessage"] = ApproveMessage;
             return this.RedirectToAction("Index");

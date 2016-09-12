@@ -29,13 +29,17 @@
                     }
                     @if (User.IsInRole("Editor"))
                     {
-                        <li>@Html.ActionLink("Редакция", "Index", "Approve", new { Area = "Editor" }, null)</li>
+                        <li>
+                            @Html.ActionLink("≪ Контролен Панел", "Index", "Approve", new { Area = "Editor" }, null)
+                        </li>
+                    }
+                    else if (User.IsInRole("Administrator"))
+                    {
+                        <li>
+                            @Html.ActionLink("≪ Админ Панел", "", "", new { Area = "Administrator" }, null)
+                        </li>
                     }
 
-                    @if (User.IsInRole("Administration"))
-                    {
-                        <li>@Html.ActionLink("Задай Роля", "Index", "Admin", new { Area = "Administration" }, null)</li>
-                    }
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

@@ -147,10 +147,10 @@ textarea {
     border-color: aliceblue;
 }
 
-.btn-primary:hover {
-    background-color: rgba(206,193,150, 1);
-    border-color: grey;
-}
+    .btn-primary:hover {
+        background-color: rgba(206,193,150, 1);
+        border-color: grey;
+    }
 
 #logoImage {
     width: 75pt;

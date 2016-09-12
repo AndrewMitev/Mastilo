@@ -11,16 +11,16 @@
         public int Id { get; set; }
 
         [Required]
-        [MinLength(3, ErrorMessage = "Title is too short!")]
+        [MinLength(3, ErrorMessage = "Заглавието е твърде кратко!")]
         public string Title { get; set; }
 
         [Required]
-        [MinLength(10, ErrorMessage = "Your creation is too short!")]
+        [MinLength(10, ErrorMessage = "Съдържанието е твърде кратко!")]
         public string Content { get; set; }
 
         public string AuthorUserName { get; set; }
 
-        public bool Pending { get; set; }
+        public bool IsApproved { get; set; }
 
         [Required]
         [MinLength(10, ErrorMessage ="Рецензията трябва да е поне 10 символа.")]
