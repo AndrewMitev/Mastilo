@@ -1,19 +1,148 @@
-﻿@model IEnumerable<MasterpieceResponseViewModel>
+﻿@model PagableMasterpieces
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<div id="masterpiecesContainer">
-    @foreach (var masterpiece in Model)
-    {
-        Html.RenderPartial("_MasterpiecePartial", masterpiece);
-    }
+
+@using (Html.BeginForm("Index", "Explore", FormMethod.Post, new { id = "postForm" }))
+{
+    @Html.HiddenFor(x => x.SortField)
+    @Html.HiddenFor(x => x.SortDirection)
+    @Html.HiddenFor(x => x.Search)
+    @Html.HiddenFor(x => x.CurrentPage)
+    @*<div class="note">Data is sorting by @Model.SortField @Model.SortDirection</div>*@
+}
+
+<hr class="style" />
+<div class="row">
+    <div class="form-inline pull-right">
+        <div class="input-group">
+            <input id="searchValue" type="text" class="form-control input-sm" style="max-width: 100%;" placeholder="Search" maxlength="100" value="">
+            <div class="input-group-btn">
+                <div id="btnSearch" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-search"></i></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="btn-group pull-right">
+        <a href="#" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+            <i class="glyphicon glyphicon-sort"></i> Sort
+            <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+            <li><a href="#" class="postSortDirection" data-sortdirection="ascending">Ascending</a></li>
+            <li><a href="#" class="postSortDirection" data-sortdirection="descending">Descending</a></li>
+        </ul>
+    </div>
+
+    <div class="btn-group pull-right">
+        <a href="#" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+            <i class="glyphicon glyphicon-filter"></i> Order by
+            <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+            <li><a href="#" class="postSortType" data-sortfield="Title">Title</a></li>
+            <li><a href="#" class="postSortType" data-sortfield="User">User</a></li>
+            <li><a href="#" class="postSortType" data-sortfield="Date">Date</a></li>
+            <li><a href="#" class="postSortType" data-sortfield="Category">Category</a></li>
+        </ul>
+    </div>
 </div>
+<hr class="style" />
+
+@if (Model.Masterpieces.Count() != 0)
+{
+    <div id="masterpiecesContainer">
+        @foreach (var masterpiece in Model.Masterpieces)
+        {
+            Html.RenderPartial("_MasterpiecePartial", masterpiece);
+        }
+    </div>
+}
+else
+{
+    <p style="font-weight: bold;">Няма резултат!</p>
+}
+
+<nav class="text-center">
+    <ul class="pagination">
+        @if (Model.CurrentPage > 1)
+        {
+            <li>
+                <a class="postPagerPrevious" href="#" aria-label="Previous">
+                    <span aria-hidden="true">&larr;Previous</span>
+                </a>
+            </li>
+        }
+        @for (int i = 1; i <= Model.TotalPages; i++)
+        {
+            var className = string.Empty;
+            if (Model.CurrentPage == i)
+            {
+                className = "active";
+            }
+            <li class="postPager @className"><a class="pager-post" href="#" data-pageindex="@i">@i</a></li>
+        }
+        @if (Model.CurrentPage < Model.TotalPages)
+        {
+            <li>
+                <a class="postPagerNext" href="#" aria-label="Next">
+                    <span aria-hidden="true">Next &rarr;</span>
+                </a>
+            </li>
+        }
+    </ul>
+</nav>
+
 @section scripts{
     <script>
         $(function () {
             $('#masterpiecesContainer')
                 .hide()
                 .slideDown(3000);
+        });
+
+        $(document).ready(function () {
+            $(".postSortType").click(function (evt) {
+                var sortfield = $(evt.target).data("sortfield");
+                $("#SortField").val(sortfield);
+                evt.preventDefault();
+                $("#postForm").submit();
+            });
+
+            $(".postSortDirection").click(function (evt) {
+                var sortdirection = $(evt.target).data("sortdirection");
+                $("#SortDirection").val(sortdirection);
+                evt.preventDefault();
+                $("#postForm").submit();
+            });
+
+            $("#btnSearch").click(function (evt) {
+                var searchValue = $("#searchValue").val();
+                $("#Search").val(searchValue);
+                evt.preventDefault();
+                $("#postForm").submit();
+            });
+
+            $(".postPager").click(function (evt) {
+                var currentpage = $(evt.target).data("pageindex");
+                $("#CurrentPage").val(currentpage);
+                evt.preventDefault();
+                $("#postForm").submit();
+            });
+
+            $(".postPagerPrevious").click(function (evt) {
+                var value = +$("#CurrentPage").val();
+                $("#CurrentPage").val(value - 1);
+                evt.preventDefault();
+                $("#postForm").submit();
+            });
+
+            $(".postPagerNext").click(function (evt) {
+                var value = +$("#CurrentPage").val();
+                $("#CurrentPage").val(value + 1);
+                evt.preventDefault();
+                $("#postForm").submit();
+            });
         });
     </script>
 }

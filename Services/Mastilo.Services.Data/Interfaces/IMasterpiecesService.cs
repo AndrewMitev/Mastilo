@@ -25,5 +25,7 @@
         Masterpiece AddDisapprovedMessage(int id, string message);
 
         void IncreaseViewCount(int id);
+
+        IQueryable<Masterpiece> GetMasterpiecesByPageAndSort(string sortType, string sortDirection, string search, int page, int take);
     }
 }

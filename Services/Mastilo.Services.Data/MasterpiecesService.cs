@@ -24,6 +24,42 @@
                 .OrderByDescending(m => m.CreatedOn);
         }
 
+        public IQueryable<Masterpiece> GetMasterpiecesByPageAndSort(string sortType, string sortDirection, string search, int page, int take)
+        {
+            IQueryable<Masterpiece> masterpieces = null;
+            switch (sortType)
+            {
+                case "Date":
+                    masterpieces = sortDirection == "ascending" ? this.masterpieces.All().OrderBy(x => x.CreatedOn) : this.masterpieces.All().OrderByDescending(x => x.CreatedOn);
+                    break;
+                case "Title":
+                    masterpieces = sortDirection == "ascending" ? this.masterpieces.All().OrderBy(x => x.Title) : this.masterpieces.All().OrderByDescending(x => x.Title);
+                    break;
+                case "User":
+                    masterpieces = sortDirection == "ascending" ? this.masterpieces.All().OrderBy(x => x.Author.UserName) : this.masterpieces.All().OrderByDescending(x => x.Author.UserName);
+                    break;
+                default:
+                    masterpieces = this.masterpieces.All().OrderBy(x => x.CreatedOn);
+                    break;
+            }
+
+            if (search == string.Empty || search == null)
+            {
+                masterpieces = masterpieces
+                      .Skip((page - 1) * take)
+                      .Take(take);
+            }
+            else
+            {
+                masterpieces = masterpieces
+                    .Where(x => x.Title.Contains(search))
+                    .Skip((page - 1) * take)
+                    .Take(take);
+            }
+
+            return masterpieces;
+        }
+
         public Masterpiece Create(string title, string content, string authorId, int genreId, ICollection<Category> categoriesNames)
         {
             var categoriesToAdd = new HashSet<Category>();
