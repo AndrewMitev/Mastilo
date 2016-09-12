@@ -12,7 +12,13 @@
                 return;
             }
 
-            int id = int.Parse(filterContext.HttpContext.Request.Params.Get("id"));
+            string[] paramsInUrl = filterContext.HttpContext.Request.Path.Split('/');
+            int id;
+
+            if (!int.TryParse(paramsInUrl[paramsInUrl.Length - 1], out id))
+            {
+                id = 1;
+            }
 
             var masterpieceService = (filterContext.Controller as PieceDetailsController).masterpiecesService;
 

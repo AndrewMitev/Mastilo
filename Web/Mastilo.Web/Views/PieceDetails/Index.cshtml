@@ -7,7 +7,7 @@
 
 <div>
     <h2>@Model.Title</h2>
-    <div class="glyphicon glyphicon-eye-open"></div>
+    <div class="glyphicon glyphicon-eye-open"></div><small>@Model.ViewCount</small>
     <div class="glyphicon glyphicon-comment"></div><small>@Model.Comments.Count</small>
     <p>@Html.Raw(Model.SanitizedContent)</p>
 </div>
