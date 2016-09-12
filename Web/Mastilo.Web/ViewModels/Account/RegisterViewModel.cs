@@ -1,6 +1,7 @@
 ﻿namespace Mastilo.Web.ViewModels.Account
 {
     using System.ComponentModel.DataAnnotations;
+    using System.Web;
 
     public class RegisterViewModel
     {
@@ -10,6 +11,9 @@
         public string Email { get; set; }
 
         [Required(ErrorMessage = "Това поле е задължително!")]
+        [Display(Name = "Псевдоним")]
+        public string UserNameCustom { get; set; }
+
         [Display(Name = "Име")]
         public string FirstName { get; set; }
 
@@ -17,13 +21,15 @@
         public string LastName { get; set; }
 
         [Display(Name = "Възраст")]
-        public int Age { get; set; }
+        public int? Age { get; set; }
 
         [Display(Name = "Населено място")]
         public string HomeTown { get; set; }
 
         [Display(Name = "Описание")]
         public string Description { get; set; }
+
+        public HttpPostedFileBase UploadedImage { get; set; }
 
         [Required(ErrorMessage = "Това поле е задължително!")]
         [StringLength(100, ErrorMessage = "{0} - трябва да е поне {2} символа.", MinimumLength = 4)]

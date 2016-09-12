@@ -2,10 +2,13 @@
 {
     using System.Collections.Generic;
     using Microsoft.AspNet.Identity;
+    using Data.Models;
 
     public class IndexViewModel
     {
         public bool HasPassword { get; set; }
+
+        public User CurrentUser { get; set; }
 
         public IList<UserLoginInfo> Logins { get; set; }
 

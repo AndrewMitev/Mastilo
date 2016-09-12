@@ -4,38 +4,38 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="http://bg.allfont.net/allfont.css?fonts=venski-sad-two-medium" rel="stylesheet" type="text/css" />
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
 </head>
 <body>
     <div class="navbar navbar-inverse  navbar-fixed-top">
         <div class="container">
-            <div class="navbar-header">
+            <div class="navbar-header navbar-left">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Мастило", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <span>М а с т и л о</span>
+                <img id="logoImage" src="~/Content/Images/ink-clipart-ink-splitter-md.png" />
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Актуални", "Index", "Explore", new { Area = "" }, null)</li>
                     @if (User.Identity.IsAuthenticated)
                     {
-                        <li>@Html.ActionLink("Стена", "Index", "Home", new { Area = "" }, null)</li>
-                        <li>@Html.ActionLink("Произведения", "Index", "Masterpiece", new { Area = "" }, null)</li>
                         <li>@Html.ActionLink("Създай", "Create", "Masterpiece", new { Area = "" }, null)</li>
-                        if (User.IsInRole("Editor"))
-                        {
-                            <li>@Html.ActionLink("Редакция", "Index", "Approve", new { Area = "Editor" }, null)</li>
-                        }
-                        if (User.IsInRole("Administration"))
-                        {
-                            <li>@Html.ActionLink("Задай Роля", "Index", "Admin", new { Area = "Administration" }, null)</li>
-                        }
                     }
-                    <li>@Html.ActionLink("Актуални", "Index", "Explore", new { Area = "" }, null)</li>
+                    @if (User.IsInRole("Editor"))
+                    {
+                        <li>@Html.ActionLink("Редакция", "Index", "Approve", new { Area = "Editor" }, null)</li>
+                    }
+
+                    @if (User.IsInRole("Administration"))
+                    {
+                        <li>@Html.ActionLink("Задай Роля", "Index", "Admin", new { Area = "Administration" }, null)</li>
+                    }
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -48,12 +48,15 @@
         <hr />
         <footer>
             @RenderSection("UserInfo", required: false)
-            <p>&copy; @DateTime.Now.Year - Сайт за лично творчество</p>
+            <p>
+                <img src="~/Content/Images/logo-white.png" />
+                &copy; @DateTime.Now.Year - Сайт за лично творчество
+            </p>
         </footer>
     </div>
-
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/likeFunctionsBundle")
     @RenderSection("scripts", required: false)
     @RenderSection("Styles", required: false)
 </body>

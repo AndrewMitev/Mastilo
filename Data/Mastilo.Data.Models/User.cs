@@ -1,6 +1,7 @@
 ﻿namespace Mastilo.Data.Models
 {
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     using System.Security.Claims;
     using System.Threading.Tasks;
     using Microsoft.AspNet.Identity;
@@ -20,11 +21,18 @@
 
         public string LastName { get; set; }
 
+        public string UserNameCustom { get; set; }
+
+        [Required(ErrorMessage = "Възраст задължителна!")]
         public int Age { get; set; }
 
         public string HomeTown { get; set; }
 
         public string Description { get; set; }
+
+        public int? ImageId { get; set; }
+
+        public virtual Image Image { get; set; }
 
         public virtual ICollection<Masterpiece> Masterpieces { get; set; }
 

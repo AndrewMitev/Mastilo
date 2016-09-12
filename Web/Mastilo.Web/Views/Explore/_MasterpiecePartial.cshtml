@@ -1,0 +1,19 @@
+﻿@model MasterpieceResponseViewModel
+
+<div class="row customBox">
+    <a style="color: inherit;" href="PieceDetails/@Model.Id">
+        <div style="font-size: 16px; text-decoration: underline; font-weight: bold;" class="col-xs-9">
+            <span>@Model.Title</span>
+        </div>
+        <div class="col-xs-12">
+            @if (Model.Content.Length < 120)
+            {
+                <span>@Html.Raw(Model.SanitizedContent)</span>
+            }
+            else
+            {
+                <span>@Html.Raw(Model.SanitizedContent.Substring(0, 120)) ...</span>
+            }
+        </div>
+    </a>
+</div>

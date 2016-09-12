@@ -17,10 +17,12 @@
 
         public ActionResult Index()
         {
-            var masterpieces = this.Cache.Get(
-                "masterpieces",
-                () => this.masterpiecesService.AllSortedByDate().To<MasterpieceResponseViewModel>().ToList(),
-                10 * 60);
+            //var masterpieces = this.Cache.Get(
+            //    "masterpieces",
+            //    () => this.masterpiecesService.AllSortedByDate().To<MasterpieceResponseViewModel>().ToList(),
+            //    10 * 60);
+
+            var masterpieces = this.masterpiecesService.AllSortedByDate().To<MasterpieceResponseViewModel>().ToList();
 
             return this.View(masterpieces);
         }

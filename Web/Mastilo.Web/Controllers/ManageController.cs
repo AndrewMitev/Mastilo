@@ -8,6 +8,7 @@
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.Owin;
     using Microsoft.Owin.Security;
+    using Services.Data.Interfaces;
 
     [Authorize]
     public class ManageController : Controller
@@ -17,15 +18,18 @@
 
         private ApplicationSignInManager signInManager;
         private ApplicationUserManager userManager;
+        private IUsersService usersService;
 
-        public ManageController()
+        public ManageController(IUsersService usersService)
         {
+            this.usersService = usersService;
         }
 
-        public ManageController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
+        public ManageController(ApplicationUserManager userManager, ApplicationSignInManager signInManager, IUsersService usersService)
         {
             this.UserManager = userManager;
             this.SignInManager = signInManager;
+            this.usersService = usersService;
         }
 
         public ApplicationSignInManager SignInManager
@@ -75,13 +79,17 @@
                 : string.Empty;
 
             var userId = this.User.Identity.GetUserId();
+
+            var user = this.usersService.GetById(userId);
+
             var model = new IndexViewModel
             {
                 HasPassword = this.HasPassword(),
                 PhoneNumber = await this.UserManager.GetPhoneNumberAsync(userId),
                 TwoFactor = await this.UserManager.GetTwoFactorEnabledAsync(userId),
                 Logins = await this.UserManager.GetLoginsAsync(userId),
-                BrowserRemembered = await this.AuthenticationManager.TwoFactorBrowserRememberedAsync(userId)
+                BrowserRemembered = await this.AuthenticationManager.TwoFactorBrowserRememberedAsync(userId),
+                CurrentUser = user
             };
             return this.View(model);
         }

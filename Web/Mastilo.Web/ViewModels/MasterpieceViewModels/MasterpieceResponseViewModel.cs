@@ -55,9 +55,11 @@
 
         public string DisapprovedMessage { get; set; }
 
-        public bool Pending { get; set; }
+        public bool IsApproved { get; set; }
 
         public bool IsAssessed { get; set; }
+
+        public int ViewCount { get; set; }
 
         public DateTime? CreatedOn { get; set; }
 
@@ -69,7 +71,7 @@
         {
             configuration.CreateMap<Masterpiece, MasterpieceResponseViewModel>()
                 .ForMember(m => m.Genre, opt => opt.MapFrom(x => x.Genre.Name))
-                .ForMember(m => m.AuthorUserName, opt => opt.MapFrom(x => x.Author.UserName))
+                .ForMember(m => m.AuthorUserName, opt => opt.MapFrom(x => x.Author.UserNameCustom))
                 .ForMember(m => m.AuthorFirstName, opt => opt.MapFrom(x => x.Author.FirstName));
         }
     }

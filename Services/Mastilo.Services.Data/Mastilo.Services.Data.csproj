@@ -60,8 +60,10 @@
   <ItemGroup>
     <Compile Include="CommentsService.cs" />
     <Compile Include="GenresService.cs" />
+    <Compile Include="ImagesService.cs" />
     <Compile Include="Interfaces\ICommentsService.cs" />
     <Compile Include="Interfaces\IGenresService.cs" />
+    <Compile Include="Interfaces\IImagesService.cs" />
     <Compile Include="Interfaces\IMasterpiecesService.cs" />
     <Compile Include="Interfaces\IUsersService.cs" />
     <Compile Include="MasterpiecesService.cs" />

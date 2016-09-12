@@ -8,6 +8,10 @@
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
     using Models;
+    using System.IO;
+    using System.Web.Hosting;
+    using System.Reflection;
+    using System.Web;
 
     public sealed class Configuration : DbMigrationsConfiguration<ApplicationDbContext>
     {
@@ -19,6 +23,27 @@
 
         protected override void Seed(ApplicationDbContext context)
         {
+            if (!context.Images.Any())
+            {
+                using (var memory = new MemoryStream())
+                {
+                    FileStream stream = new FileStream(this.MapPath("~/../Migrations/default-user.png"), FileMode.Open);
+
+                    stream.CopyTo(memory);
+
+                    var content = memory.GetBuffer();
+
+                    var newImage = new Image
+                    {
+                        Content = content,
+                        FileExtension = stream.Name.Split(new[] { '.' }).Last()
+                    };
+
+                    context.Images.Add(newImage);
+                    context.SaveChanges();
+                }
+            }
+
             if (!context.Roles.Any())
             {
                 var store = new RoleStore<IdentityRole>(context);
@@ -184,6 +209,20 @@
                 // Throw a new DbEntityValidationException with the improved exception message.
                 throw new DbEntityValidationException(exceptionMessage, ex.EntityValidationErrors);
             }
+        }
+
+        private string MapPath(string seedFile)
+        {
+            if (HttpContext.Current != null)
+            {
+                return HostingEnvironment.MapPath(seedFile);
+            }
+
+            var absolutePath = new Uri(Assembly.GetExecutingAssembly().CodeBase).AbsolutePath;
+            var directoryName = Path.GetDirectoryName(absolutePath);
+            var path = Path.Combine(directoryName, ".." + seedFile.TrimStart('~').Replace('/', '\\'));
+
+            return path;
         }
     }
 }

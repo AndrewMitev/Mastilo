@@ -32,6 +32,7 @@
             }
 
             var commentDatabase = this.Mapper.Map<Comment>(comment);
+            commentDatabase.UserId = this.User.Identity.GetUserId();
             this.commentsService.AddComment(commentDatabase);
 
             return this.RedirectToAction("AllById", new { id = comment.MasterpieceId });

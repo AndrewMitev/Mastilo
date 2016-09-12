@@ -9,24 +9,30 @@
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.Owin;
     using Microsoft.Owin.Security;
+    using System.IO;
+    using Services.Data.Interfaces;
 
     [Authorize]
     public class AccountController : Controller
     {
         // Used for XSRF protection when adding external logins
         private const string XsrfKey = "XsrfId";
+        private const int DefaultProfileImageId = 1;
 
         private ApplicationSignInManager signInManager;
         private ApplicationUserManager userManager;
+        private readonly IImagesService imagesService;
 
-        public AccountController()
+        public AccountController(IImagesService imagesService)
         {
+            this.imagesService = imagesService;
         }
 
-        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
+        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager, IImagesService imagesService)
         {
             this.UserManager = userManager;
             this.SignInManager = signInManager;
+            this.imagesService = imagesService;
         }
 
         public ApplicationSignInManager SignInManager
@@ -154,7 +160,42 @@
         {
             if (this.ModelState.IsValid)
             {
-                var user = new User { UserName = model.Email, Email = model.Email };
+                PasswordHasher hasher = new PasswordHasher();
+
+                var user = new User
+                {
+                    UserName = model.Email,
+                    Email = model.Email,
+                    UserNameCustom = model.UserNameCustom,
+                    FirstName = model.FirstName,
+                    LastName = model.LastName,
+                    Age = model.Age == null ? 0 : (int)model.Age,
+                    HomeTown = model.HomeTown,
+                    Description = model.Description,
+                    PasswordHash = hasher.HashPassword(model.Password)
+                };
+
+                if (model.UploadedImage != null)
+                {
+                    using (var memory = new MemoryStream())
+                    {
+                        model.UploadedImage.InputStream.CopyTo(memory);
+                        var content = memory.GetBuffer();
+
+                        var newImage = new Image
+                        {
+                            Content = content,
+                            FileExtension = model.UploadedImage.FileName.Split(new[] { '.' }).Last()
+                        };
+
+                        user.ImageId = this.imagesService.SaveNewImage(newImage);
+                    }
+                }
+                else
+                {
+                    user.ImageId = DefaultProfileImageId;
+                }
+
                 var result = await this.UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -389,6 +430,17 @@
         public ActionResult ExternalLoginFailure()
         {
             return this.View();
+        }
+
+        public ActionResult Image(int id)
+        {
+            var image = this.imagesService.GetById(id);
+            if (image == null)
+            {
+                throw new HttpException(404, "Image not found");
+            }
+
+            return this.File(image.Content, "image/" + image.FileExtension);
         }
 
         protected override void Dispose(bool disposing)

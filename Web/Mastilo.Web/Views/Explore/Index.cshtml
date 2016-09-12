@@ -1,16 +1,19 @@
-﻿@model IEnumerable<Mastilo.Web.ViewModels.MasterpieceViewModels.MasterpieceResponseViewModel>
-
+﻿@model IEnumerable<MasterpieceResponseViewModel>
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-
-@foreach (var masterpiece in Model)
-{
-    Html.RenderPartial("_MasterpiecePartial", masterpiece);
-}
-
-
+<div id="masterpiecesContainer">
+    @foreach (var masterpiece in Model)
+    {
+        Html.RenderPartial("_MasterpiecePartial", masterpiece);
+    }
+</div>
 @section scripts{
-    @Scripts.Render("~/bundles/likeFunctionsBundle");
+    <script>
+        $(function () {
+            $('#masterpiecesContainer')
+                .hide()
+                .slideDown(3000);
+        });
+    </script>
 }

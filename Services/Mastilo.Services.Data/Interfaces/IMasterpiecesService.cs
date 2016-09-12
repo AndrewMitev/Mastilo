@@ -23,5 +23,7 @@
         Masterpiece UpdatePendingStatus(int id, bool pendingStatus);
 
         Masterpiece AddDisapprovedMessage(int id, string message);
+
+        void IncreaseViewCount(int id);
     }
 }

@@ -45,7 +45,7 @@
                 Content = content,
                 AuthorId = authorId,
                 GenreId = genreId,
-                Pending = true
+                IsAssessed = true
             };
 
             this.masterpieces.Add(masterpiece);
@@ -79,20 +79,20 @@
         {
             return this.masterpieces
                 .All()
-                .Where(m => m.Pending == true && m.IsAssessed == false);
+                .Where(m => m.IsAssessed == true && m.IsAssessed == false);
         }
 
         public IQueryable<Masterpiece> AllPendingAssessed()
         {
             return this.masterpieces
                 .All()
-                .Where(m => m.Pending == true && m.IsAssessed == true);
+                .Where(m => m.IsAssessed == true && m.IsAssessed == true);
         }
 
         public Masterpiece UpdatePendingStatus(int id, bool pendingStatus)
         {
             var masterpiece = this.masterpieces.GetById(id);
-            masterpiece.Pending = pendingStatus;
+            masterpiece.IsAssessed = pendingStatus;
 
             this.masterpieces.Save();
 
@@ -102,13 +102,20 @@
         public Masterpiece AddDisapprovedMessage(int id, string message)
         {
             var masterpiece = this.masterpieces.GetById(id);
-            masterpiece.Pending = true;
+            masterpiece.IsAssessed = true;
             masterpiece.IsAssessed = true;
             masterpiece.DisapprovedMessage = message;
 
             this.masterpieces.Save();
 
             return masterpiece;
+        }
+
+        public void IncreaseViewCount(int id)
+        {
+            var masterpiece = this.masterpieces.GetById(id);
+            masterpiece.ViewCount += 1;
+            this.masterpieces.Save();
         }
     }
 }

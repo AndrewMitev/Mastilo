@@ -23,13 +23,15 @@
         [MinLength(10, ErrorMessage = "Your creation is too short!")]
         public string Content { get; set; }
 
-        public bool Pending { get; set; }
-
         public bool IsAssessed { get; set; }
+
+        public bool IsApproved { get; set; }
 
         public string DisapprovedMessage { get; set; }
 
         public int GenreId { get; set; }
+
+        public int ViewCount { get; set; }
 
         [ForeignKey("GenreId")]
         public virtual Genre Genre { get; set; }

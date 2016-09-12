@@ -215,6 +215,7 @@
     <Compile Include="Controllers\MasterpieceController.cs" />
     <Compile Include="Controllers\PieceDetailsController.cs" />
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Filters\TrackMasterpieceViewsCountFilter.cs" />
     <Compile Include="GlimpseSecurityPolicy.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -255,7 +256,9 @@
     <Content Include="Content\Images\404.jpg" />
     <Content Include="Content\Images\bad-request.jpg" />
     <Content Include="Content\Images\bookTest.jpg" />
-    <Content Include="Content\Images\pero.jpg" />
+    <Content Include="Content\Images\default-user.png" />
+    <Content Include="Content\Images\ink-clipart-ink-splitter-md.png" />
+    <Content Include="Content\Images\logo-white.png" />
     <Content Include="Content\jquery.jqGrid\ellipsis-xbl.xml" />
     <Content Include="Content\jquery.jqGrid\ui.jqgrid.css" />
     <Content Include="Content\themes\base\images\animated-overlay.gif" />
@@ -604,6 +607,7 @@
     <Content Include="Views\Shared\_UserMasterpiecesPartial.cshtml" />
     <Content Include="Views\Error\NotFound.cshtml" />
     <Content Include="Views\Error\BadRequest.cshtml" />
+    <Content Include="Views\Explore\_MasterpiecePartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
