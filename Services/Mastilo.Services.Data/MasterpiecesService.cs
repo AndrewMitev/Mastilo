@@ -39,13 +39,14 @@
             if (search == string.Empty || search == null)
             {
                 masterpieces = masterpieces
+                      .Where(m => m.IsApproved == true)
                       .Skip((page - 1) * take)
                       .Take(take);
             }
             else
             {
                 masterpieces = masterpieces
-                    .Where(x => x.Title.Contains(search))
+                    .Where(x => x.Title.Contains(search) && x.IsApproved == true)
                     .Skip((page - 1) * take)
                     .Take(take);
             }
