@@ -6,6 +6,7 @@
     using System.Threading.Tasks;
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
+    using System;
 
     public class User : IdentityUser
     {
@@ -41,6 +42,8 @@
         public virtual ICollection<Rate> Rates { get; set; }
 
         public virtual ICollection<Comment> Comments { get; set; }
+
+        public DateTime RegistrationDate { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<User> manager)
         {

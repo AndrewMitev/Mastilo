@@ -11,6 +11,7 @@
     using Microsoft.Owin.Security;
     using System.IO;
     using Services.Data.Interfaces;
+    using System;
 
     [Authorize]
     public class AccountController : Controller
@@ -172,7 +173,8 @@
                     Age = model.Age == null ? 0 : (int)model.Age,
                     HomeTown = model.HomeTown,
                     Description = model.Description,
-                    PasswordHash = hasher.HashPassword(model.Password)
+                    PasswordHash = hasher.HashPassword(model.Password),
+                    RegistrationDate = DateTime.UtcNow
                 };
 
                 if (model.UploadedImage != null)

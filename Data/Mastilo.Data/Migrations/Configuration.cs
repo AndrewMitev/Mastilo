@@ -27,7 +27,7 @@
             {
                 using (var memory = new MemoryStream())
                 {
-                    FileStream stream = new FileStream(this.MapPath("~/DefaultImages/default-user.png"), FileMode.Open);
+                    FileStream stream = new FileStream(this.MapPath("~/Content/Images/default-user.png"), FileMode.Open);
 
                     stream.CopyTo(memory);
 
@@ -69,6 +69,7 @@
                 UserNameCustom = "Lithiumm",
                 PasswordHash = hasher.HashPassword("123456"),
                 Image = context.Images.FirstOrDefault(),
+                RegistrationDate = DateTime.UtcNow,
                 SecurityStamp = Guid.NewGuid().ToString()
             };
 
@@ -82,6 +83,7 @@
                 UserNameCustom = "Peshaka",
                 PasswordHash = hasher.HashPassword("123456"),
                 Image = context.Images.FirstOrDefault(),
+                RegistrationDate = DateTime.UtcNow,
                 SecurityStamp = Guid.NewGuid().ToString()
             };
 
@@ -92,6 +94,7 @@
                 UserNameCustom = "Admincho",
                 PasswordHash = hasher.HashPassword("123456"),
                 Image = context.Images.FirstOrDefault(),
+                RegistrationDate = DateTime.UtcNow,
                 SecurityStamp = Guid.NewGuid().ToString()
             };
 
@@ -102,6 +105,7 @@
                 UserNameCustom = "Editorcho",
                 PasswordHash = hasher.HashPassword("123456"),
                 Image = context.Images.FirstOrDefault(),
+                RegistrationDate = DateTime.UtcNow,
                 SecurityStamp = Guid.NewGuid().ToString()
             };
 
