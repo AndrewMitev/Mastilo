@@ -20,15 +20,48 @@
             this.masterpiecesService = masterpiecesService;
         }
 
-        public ActionResult Index()
+        public ActionResult New()
         {
             return this.View();
         }
 
-        public ActionResult LoadGrid()
+        public ActionResult Edited()
+        {
+            return this.View();
+        }
+
+        public ActionResult LoadGridNew()
         {
             var pieces = this.masterpiecesService
                 .AllNotAssessed()
+                .To<MasterpiecesApproveModel>()
+                .ToList();
+
+            var jsonData = new
+            {
+                total = 1,
+                page = 1,
+                records = pieces.Count,
+                rows = (
+                        from item in pieces
+                        select new
+                        {
+                            id = item.Id,
+                            cell = new string[]
+                            {
+                                item.Title,
+                                item.Genre
+                            }
+                        }).ToArray()
+            };
+
+            return this.Json(jsonData, JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult LoadGridEdited()
+        {
+            var pieces = this.masterpiecesService
+                .AllPendingAssessed()
                 .To<MasterpiecesApproveModel>()
                 .ToList();
 
@@ -58,7 +91,7 @@
             this.masterpiecesService.UpdatePendingStatus(id, true);
 
             this.TempData["approveMessage"] = ApproveMessage;
-            return this.RedirectToAction("Index");
+            return this.RedirectToAction("New");
         }
 
         [ValidateAntiForgeryToken]
@@ -67,7 +100,7 @@
             this.masterpiecesService.AddDisapprovedMessage(model.Id, model.DisapprovedMessage);
 
             this.TempData["rejectMessage"] = RejectMessage;
-            return this.RedirectToAction("Index");
+            return this.RedirectToAction("New");
         }
     }
 }

@@ -27,6 +27,8 @@
 
         public bool IsApproved { get; set; }
 
+        public bool IsEdited { get; set; }
+
         public string DisapprovedMessage { get; set; }
 
         public int GenreId { get; set; }

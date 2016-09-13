@@ -203,7 +203,7 @@
 
                     await this.SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
 
-                    return this.RedirectToAction("Index", "Home");
+                    return this.RedirectToAction("Index", "Explore");
                 }
 
                 this.AddErrors(result);
@@ -422,7 +422,7 @@
         public ActionResult LogOff()
         {
             this.AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
-            return this.RedirectToAction("Index", "Home");
+            return this.RedirectToAction("Index", "Explore");
         }
 
         // GET: /Account/ExternalLoginFailure
@@ -478,7 +478,7 @@
                 return this.Redirect(returnUrl);
             }
 
-            return this.RedirectToAction("Index", "Home");
+            return this.RedirectToAction("Index", "Explore");
         }
 
         internal class ChallengeResult : HttpUnauthorizedResult

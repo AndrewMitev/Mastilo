@@ -123,7 +123,7 @@
         {
             return this.masterpieces
                 .All()
-                .Where(m => m.IsAssessed == true && m.IsApproved == false);
+                .Where(m => m.IsAssessed == true && m.IsApproved == false && m.IsEdited == true);
         }
 
         public Masterpiece UpdatePendingStatus(int id, bool isApproved)

@@ -330,13 +330,15 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\Editor\Views\web.config" />
     <Content Include="Areas\Editor\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\Editor\Views\Approve\Index.cshtml" />
+    <Content Include="Areas\Editor\Views\Approve\New.cshtml" />
     <Content Include="Areas\Administration\Views\web.config" />
     <Content Include="Areas\Editor\Views\Details\Index.cshtml" />
     <Content Include="Areas\Administration\Views\Admin\Index.cshtml" />
     <Content Include="Areas\Administration\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Administration\Views\Shared\_ChangeUserPartial.cshtml" />
     <Content Include="Areas\Editor\Views\Shared\_EditorLayout.cshtml" />
+    <Content Include="Areas\Editor\Views\Approve\Edited.cshtml" />
+    <Content Include="Areas\Administration\Views\Shared\_EditorLayout.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\i18n\grid.locale-ar.js" />
     <Content Include="Scripts\i18n\grid.locale-bg.js" />

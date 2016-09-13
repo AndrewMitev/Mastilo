@@ -30,13 +30,13 @@
                     @if (User.IsInRole("Editor"))
                     {
                         <li>
-                            @Html.ActionLink("≪ Контролен Панел", "Index", "Approve", new { Area = "Editor" }, null)
+                            @Html.ActionLink("≪ Контролен Панел", "New", "Approve", new { Area = "Editor" }, null)
                         </li>
                     }
-                    else if (User.IsInRole("Administrator"))
+                    else if (User.IsInRole("Administration"))
                     {
                         <li>
-                            @Html.ActionLink("≪ Админ Панел", "", "", new { Area = "Administrator" }, null)
+                            @Html.ActionLink("≪ Админ Панел", "Index", "Admin", new { Area = "Administration" }, null)
                         </li>
                     }
 

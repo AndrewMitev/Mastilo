@@ -9,7 +9,7 @@
     </div>
 </div>
 
-@using (Html.BeginForm("Approve", "Approve", new { @class = "form-horizontal" }))
+@using (Html.BeginForm("Approve", "Approve", new { area = "Editor" }, FormMethod.Post, new { @class = "form-horizontal" }))
 {
     <input type="hidden" name="id" value="@Model.Id" />
     <input type="submit" value="Одобри" style="max-width: 100pt;" class="form-control btn btn-success" />
@@ -19,7 +19,7 @@
 <br />
 <button id="buttonReject" style="max-width: 100pt;" class="btn btn-danger btn-sm form-control">Отхвърли</button>
 
-@using (Html.BeginForm("Reject", "Approve", FormMethod.Post, new { id = "rejectForm", @class = "form-horizontal", style = "display:none" }))
+@using (Html.BeginForm("Reject", "Approve", new { area = "Editor" }, FormMethod.Post, new { id = "rejectForm", @class = "form-horizontal", style = "display:none" }))
 {
     @Html.AntiForgeryToken()
 

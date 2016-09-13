@@ -27,7 +27,7 @@
             {
                 using (var memory = new MemoryStream())
                 {
-                    FileStream stream = new FileStream(this.MapPath("~/../Migrations/default-user.png"), FileMode.Open);
+                    FileStream stream = new FileStream(this.MapPath("~/DefaultImages/default-user.png"), FileMode.Open);
 
                     stream.CopyTo(memory);
 
@@ -66,7 +66,9 @@
                 Age = 17,
                 FirstName = "Rally",
                 LastName = "Br.",
+                UserNameCustom = "Lithiumm",
                 PasswordHash = hasher.HashPassword("123456"),
+                Image = context.Images.FirstOrDefault(),
                 SecurityStamp = Guid.NewGuid().ToString()
             };
 
@@ -77,7 +79,9 @@
                 Age = 90,
                 FirstName = "Petur",
                 LastName = "Mitov",
+                UserNameCustom = "Peshaka",
                 PasswordHash = hasher.HashPassword("123456"),
+                Image = context.Images.FirstOrDefault(),
                 SecurityStamp = Guid.NewGuid().ToString()
             };
 
@@ -85,7 +89,9 @@
             {
                 UserName = "admin@admin.com",
                 Email = "admin@admin.com",
+                UserNameCustom = "Admincho",
                 PasswordHash = hasher.HashPassword("123456"),
+                Image = context.Images.FirstOrDefault(),
                 SecurityStamp = Guid.NewGuid().ToString()
             };
 
@@ -93,7 +99,9 @@
             {
                 UserName = "editor@editor.com",
                 Email = "editor@editor.com",
+                UserNameCustom = "Editorcho",
                 PasswordHash = hasher.HashPassword("123456"),
+                Image = context.Images.FirstOrDefault(),
                 SecurityStamp = Guid.NewGuid().ToString()
             };
 
@@ -182,6 +190,9 @@
                     SeenBy = new List<SeenBy> { new SeenBy { SeenByUsername = "Pesho" }, new SeenBy { SeenByUsername = "Gosho" } },
                     Author = user,
                     Genre = prose,
+                    IsAssessed = true,
+                    IsApproved = true,
+                    IsEdited = false,
                     Comments = new List<Comment> { new Comment { User = secondUser, Text = "Много смешно" }, new Comment { User = secondUser, Text = "хахахах" } },
                     Rates = new List<Rate> { new Rate { User = secondUser, Value = 5 } }
                 };
