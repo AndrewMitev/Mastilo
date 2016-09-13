@@ -6,13 +6,11 @@
 
     public interface IMasterpiecesService
     {
-        IQueryable AllSortedByDate();
-
         Masterpiece Create(string title, string content, string authorId, int genreId, ICollection<Category> categories);
 
         int Count();
 
-        IQueryable GetMasterpiecesByPage(string userId, int page, int itemsPerPage);
+        IQueryable GetMasterpiecesByPage(string userId, int page, int itemsPerPage, bool approved);
 
         Masterpiece GetMasterpieceById(int id);
 
@@ -27,5 +25,9 @@
         void IncreaseViewCount(int id);
 
         IQueryable<Masterpiece> GetMasterpiecesByPageAndSort(string sortType, string sortDirection, string search, int page, int take);
+
+        IQueryable<Masterpiece> AllByUserPending(string userId);
+
+        IQueryable<Masterpiece> AllByUserApproved(string userId);
     }
 }

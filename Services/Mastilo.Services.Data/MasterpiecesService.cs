@@ -17,13 +17,6 @@
             this.categories = categories;
         }
 
-        public IQueryable AllSortedByDate()
-        {
-            return this.masterpieces
-                .All()
-                .OrderByDescending(m => m.CreatedOn);
-        }
-
         public IQueryable<Masterpiece> GetMasterpiecesByPageAndSort(string sortType, string sortDirection, string search, int page, int take)
         {
             IQueryable<Masterpiece> masterpieces = null;
@@ -92,11 +85,11 @@
             return masterpiece;
         }
 
-        public IQueryable GetMasterpiecesByPage(string userId, int page, int take)
+        public IQueryable GetMasterpiecesByPage(string userId, int page, int take, bool approved)
         {
             return this.masterpieces
                 .All()
-                .Where(m => m.AuthorId == userId)
+                .Where(m => m.AuthorId == userId && m.IsApproved == approved)
                 .OrderBy(m => m.CreatedOn)
                 .Skip((page - 1) * take)
                 .Take(take);
@@ -154,6 +147,20 @@
             var masterpiece = this.masterpieces.GetById(id);
             masterpiece.ViewCount += 1;
             this.masterpieces.Save();
+        }
+
+        public IQueryable<Masterpiece> AllByUserApproved(string userId)
+        {
+            return this.masterpieces
+                .All()
+                .Where(m => m.AuthorId == userId && m.IsApproved == true);
+        }
+
+        public IQueryable<Masterpiece> AllByUserPending(string userId)
+        {
+            return this.masterpieces
+                .All()
+                .Where(m => m.AuthorId == userId && m.IsApproved == false && m.IsAssessed == true);
         }
     }
 }

@@ -15,7 +15,7 @@
     [Authorize]
     public class MasterpieceController : BaseController
     {
-        private readonly int itemsPerPage = 10;
+        private readonly int ItemsPerPage = 5;
 
         private readonly IGenresService genresService;
         private readonly IMasterpiecesService masterpiecesService;
@@ -26,13 +26,23 @@
             this.masterpiecesService = masterpiecesService;
         }
 
-        public ActionResult Index(int id = 1)
+        public ActionResult Index(int page = 1, bool pending = false)
         {
             string userId = this.User.Identity.GetUserId();
-            var page = id;
-            var masterpieces = this.masterpiecesService.GetMasterpiecesByPage(userId, page, this.itemsPerPage).To<MasterpieceResponseViewModel>().ToList();
+
+            var masterpieces = new List<MasterpieceResponseViewModel>();
+
+            if (pending)
+            {
+                masterpieces = this.masterpiecesService.AllByUserPending(userId).To<MasterpieceResponseViewModel>().ToList();
+            }
+            else
+            {
+                masterpieces = this.masterpiecesService.AllByUserApproved(userId).To<MasterpieceResponseViewModel>().ToList();
+            }
+
             var postsNumber = this.masterpiecesService.Count();
-            var totalPages = (int)Math.Ceiling(postsNumber / (decimal)this.itemsPerPage);
+            var totalPages = (int)Math.Ceiling(postsNumber / (decimal)this.ItemsPerPage);
 
             var viewModel = new PagableMasterpieces
             {
@@ -42,6 +52,18 @@
             };
 
             return this.View(viewModel);
+        }
+
+        [HttpGet]
+        public ActionResult GetApprovedMasterpiecesByUser(string userId)
+        {
+            return this.RedirectToAction("Index", new { page = 1, pending = false });
+        }
+
+        [HttpGet]
+        public ActionResult GetPendingMasterpiecesByUser(string userId)
+        {
+            return this.RedirectToAction("Index", new { page = 1, pending = true });
         }
 
         public ActionResult Create()

@@ -583,7 +583,6 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Explore\Index.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\DateTime.cshtml" />
-    <Content Include="Views\Shared\_MasterpiecePartial.cshtml" />
     <Content Include="Views\Masterpiece\Create.cshtml" />
     <Content Include="Views\Categories\_GetCategoriesByGenreIdPartial.cshtml" />
     <Content Include="Views\Masterpiece\Index.cshtml" />
@@ -604,10 +603,9 @@
     <Content Include="Views\Shared\_CommentPartial.cshtml" />
     <Content Include="Views\PieceDetails\DisplayTemplates\DateTime.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
-    <Content Include="Views\Shared\_UserMasterpiecesPartial.cshtml" />
     <Content Include="Views\Error\NotFound.cshtml" />
     <Content Include="Views\Error\BadRequest.cshtml" />
-    <Content Include="Views\Explore\_MasterpiecePartial.cshtml" />
+    <Content Include="Views\Shared\_MasterpiecePartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

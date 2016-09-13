@@ -1,7 +1,8 @@
 ﻿@model Mastilo.Web.ViewModels.MasterpieceViewModels.MasterpieceResponseViewModel
 
 <div class="well">
-    <img width="40" height="60" src="~/Content/Images/pero.jpg" /> <span>@Model.AuthorUserName</span>
+    <img width="40" height="60" src="@Url.Action("Image", "Account", new { id = Model.AuthorImageId })" /> <span>@Model.AuthorUserName</span>
+    
     @Html.DisplayFor(x => x.CreatedOn)
 </div>
 

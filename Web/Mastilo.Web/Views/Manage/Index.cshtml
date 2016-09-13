@@ -6,8 +6,8 @@
         <div class="col-md-12">Име: @Model.CurrentUser.UserNameCustom</div>
         <div class="col-md-12">Възраст: @Model.CurrentUser.Age</div>
         <div class="col-md-12">Регистрация: @Html.DisplayFor(m => m.CurrentUser.RegistrationDate)</div>
-        <div class="col-md-12"><a href="#">Произведения: @Model.CurrentUser.Masterpieces.Where(m => m.IsApproved == true).Count()</a></div>
-        <div class="col-md-12"><a href="#">За одобрение: @Model.CurrentUser.Masterpieces.Where(m => m.IsApproved == false).Count()</a></div>
+        <div class="col-md-12"><a href="~/Masterpiece/GetApprovedMasterpiecesByUser?userId=@Model.CurrentUser.Id" style="color: black; text-decoration: none;">Произведения: @Model.CurrentUser.Masterpieces.Where(m => m.IsApproved == true).Count()</a></div>
+        <div class="col-md-12"><a href="~/Masterpiece/GetPendingMasterpiecesByUser?userId=@Model.CurrentUser.Id" style="color: black; text-decoration: none;">За одобрение: @Model.CurrentUser.Masterpieces.Where(m => m.IsApproved == false && m.IsAssessed == true).Count()</a></div>
     </div>
 </div>
 

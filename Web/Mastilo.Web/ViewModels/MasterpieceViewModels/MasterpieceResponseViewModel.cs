@@ -61,6 +61,8 @@
 
         public int ViewCount { get; set; }
 
+        public int? AuthorImageId { get; set; }
+
         public DateTime? CreatedOn { get; set; }
 
         public ICollection<CategoriesViewModel> Categories { get; set; }
@@ -72,6 +74,7 @@
             configuration.CreateMap<Masterpiece, MasterpieceResponseViewModel>()
                 .ForMember(m => m.Genre, opt => opt.MapFrom(x => x.Genre.Name))
                 .ForMember(m => m.AuthorUserName, opt => opt.MapFrom(x => x.Author.UserNameCustom))
+                .ForMember(m => m.AuthorImageId, opt => opt.MapFrom(x => x.Author.ImageId))
                 .ForMember(m => m.AuthorFirstName, opt => opt.MapFrom(x => x.Author.FirstName));
         }
     }
